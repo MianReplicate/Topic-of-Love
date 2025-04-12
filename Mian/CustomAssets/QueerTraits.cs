@@ -272,7 +272,7 @@ namespace Better_Loving
                 _romanticTraits.Add(trait);
             }
 
-            Util.AddActorTrait(trait);
+            Util.AddActorTrait(trait, null);
         }
     }
 }

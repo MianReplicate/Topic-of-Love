@@ -14,7 +14,7 @@
   "happiness_okay_sex": "Mildly enjoyed coupling",
   "happiness_dialog_okay_sex_0": "That was alright, they weren't the best at it.",
   "happiness_dialog_okay_sex_1": "Meh, at least it was okay",
-  
+
   "happiness_enjoyed_sex": "Enjoyed coupling",
   "happiness_dialog_enjoyed_sex_0": "I loved that! I would be down to do them again.",
   "happiness_dialog_enjoyed_sex_1": "Perfect, just how I like doing it.",
@@ -22,7 +22,7 @@
   "happiness_disliked_sex": "Disliked coupling",
   "happiness_dialog_disliked_sex_0": "I did not like any single bit of that.",
   "happiness_dialog_disliked_sex_1": "Ugh that was terrible, I regret doing that.",
-  
+
   "happiness_cheated_on": "Cheated on",
   "happiness_dialog_cheated_on_0": "Why does this always happen to me..?",
   "happiness_dialog_cheated_on_1": "Was it my fault?",
@@ -34,7 +34,7 @@
   "happiness_dialog_breakup_1": "At least I wasn't cheated on..",
   "happiness_dialog_breakup_2": "I loved them so much.",
   "happiness_dialog_breakup_3": "I'm sorry that we ended up this way.",
-  
+
   "happiness_true_self": "Identity feels different",
   "happiness_dialog_true_self_0": "It feels so good to realize myself.",
   "happiness_dialog_true_self_1": "My orientation is the biggest part of what makes me, me.",
@@ -52,7 +52,7 @@
   "happiness_insulted_for_orientation": "Insulted for their orientation",
   "happiness_dialog_insulted_for_orientation_0": "Why should they care who I have sex with or date?!",
   "happiness_dialog_insulted_for_orientation_1": "What the hell is wrong with them!",
-  
+
   "task_insult_orientation": "Insult Orientations",
   "task_invite_for_sex": "Invite for Sex",
   "task_prostitution": "Prostitution",
@@ -65,7 +65,7 @@
   "love_successful": "Force lover successful!",
   "ForceLover": "Force Lover",
   "ForceLover Description": "Force a unit to become lovers with another unit",
-  
+
   "trait_aromantic": "Aromantic",
   "trait_aromantic_info": "They do not desire love unlike most",
   "trait_aromantic_info_2": "It's not because they have not found the right person, they just feel this way",
@@ -85,7 +85,7 @@
   "trait_asexual": "Asexual",
   "trait_asexual_info": "They do not desire sex unlike most",
   "trait_asexual_info_2": "Sex is so weird. It's soggy and time consuming.",
-  
+
   "trait_heterosexual": "Heterosexual",
   "trait_heterosexual_info": "They prefer having sex with the opposite sex",
   "trait_heterosexual_info_2": "Aka, factory settings.",
@@ -114,6 +114,10 @@
   "trait_abrosexual_info": "Their sexual orientation may change over time",
   "trait_abrosexual_info_2": "Brains are complex.",
 
+  "trait_committed_incest": "Faithful",
+  "trait_committed_incest_info": "Had a romance with a family member",
+  "trait_committed_incest_info_2": "A lewd thing to share.",
+
   "culture_trait_homophobic": "Homophobic",
   "culture_trait_homophobic_info": "They despise others who get romantically or sexually involved with the same sex as themselves",
   "culture_trait_homophobic_info_2": "To them, it's disgusting.",
@@ -122,9 +126,13 @@
   "culture_trait_heterophobic_info": "They despise others who get romantically or sexually involved with a different sex from themselves",
   "culture_trait_heterophobic_info_2": "It's strange to think of two different sex people getting together.",
 
-  "culture_trait_incest": "Incest",
-  "culture_trait_incest_info": "Biologically related members may fall in love and have sex",
-  "culture_trait_incest_info_2": "Awkward!",
+  "culture_trait_incest_taboo": "Incest Taboo",
+  "culture_trait_incest_taboo_info": "Incest is a very disrescpected thing, so it almost wont happen",
+  "culture_trait_incest_taboo_info_2": "Maybe, a good thing to do",
+
+  "culture_trait_scar_of_incest": "Scar of Incest",
+  "culture_trait_scar_of_incest_info": "Civilizations feel that incest is a crucial part to their culture and will do it more often.",
+  "culture_trait_scar_of_incest_info_2": "It is important to keep population counts high!",
 
   "culture_trait_orientationless": "Orientationless",
   "culture_trait_orientationless_info": "The idea of orientations do not exist. They will only find lovers that they can breed with.",
@@ -142,17 +150,21 @@
   "culture_trait_sexual_expectations_info": "Lovers may fulfill their sexual expectations with someone else without repercussions even if it is not their partner.",
   "culture_trait_sexual_expectations_info_2": "They can express their sexual being!",
 
-  "culture_trait_scar_of_incest": "Scar of Incest",
-  "culture_trait_scar_of_incest_info": "Civilizations feel that incest is a crucial part to their culture and will never remove it.",
-  "culture_trait_scar_of_incest_info_2": "It is important to keep population counts high!",
-
   "subspecies_trait_preservation": "Preservation",
   "subspecies_trait_preservation_info": "If their relative population count to their max limits are low, they will try to find people that they can reproduce with no matter what, disregarding what their culture or orientation may deem appropriate.",
   "subspecies_trait_preservation_info_2": "When the going gets tough, you do what you must to keep your legacies.",
 
+  "subspecies_trait_incest": "Incest",
+  "subspecies_trait_incest_info": "Biologically related members may fall in love and have sex",
+  "subspecies_trait_incest_info_2": "Awkward!",
+
   "subspecies_trait_reproduction_same_sex": "Same Sex Reproduction",
   "subspecies_trait_reproduction_same_sex_info": "Two of the same sex are required to reproduce",
   "subspecies_trait_reproduction_same_sex_info_2": "Two indeed become more",
+
+  "clan_trait_clanbound_isolation": "Clanbound Isolation",
+  "clan_trait_clanbound_isolation_info": "Clan members will only date with other clan members",
+  "clan_trait_clanbound_isolation_info_2": "We cant let any plebeians rule our lands!",
 
   "Misc": "Developer Settings",
   "SlowOnLog": "Slow on Log",

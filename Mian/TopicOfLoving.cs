@@ -74,6 +74,7 @@ namespace Better_Loving.Mian
             CommunicationTopics.Init();
             DecisionAndBehaviorTasks.Init();
             GodPowers.Init();
+            ClanTraits.Init();
         }
         private void Awake()
         {

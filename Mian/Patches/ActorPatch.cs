@@ -104,13 +104,13 @@ public class ActorPatch
             var allowCrossSpeciesLove = (bool)config["CrossSpecies"]["AllowCrossSpeciesLove"].GetValue();
             var mustBeSmart = (bool)config["CrossSpecies"]["MustBeSmart"].GetValue();
             var mustBeXenophile = (bool)config["CrossSpecies"]["MustBeXenophile"].GetValue();
-            
+
             if (
                 Util.OnceDated(pTarget, __instance)
                 ||
                  (!QueerTraits.PreferenceMatches(__instance, pTarget, false) && Util.IsOrientationSystemEnabledFor(__instance))
                  || (!QueerTraits.PreferenceMatches(pTarget, __instance, false) && Util.IsOrientationSystemEnabledFor(pTarget))
-                
+
                 || __instance.hasLover()
                 || pTarget.hasLover()
                 // replaced by the newer sex cheating system (we'll probably do a flirting task in the future for romance?)
@@ -123,17 +123,17 @@ public class ActorPatch
                 //                                (pTarget.hasTrait("unfaithful") ? 0.1f : 0f) 
                 //                                + (QueerTraits.PreferenceMatches(__instance, __instance.lover, false) ? 0.005f: 0.1f))
                 //                            || pTarget.hasTrait("faithful") || pTarget.hasCultureTrait("committed")))
-                
+
                 // make this a cultural trait to configure
                 || !WithinOfAge(__instance, pTarget)
-                
+
                 || __instance.areFoes(pTarget)
-                
+
                 || (!(__instance.isSameSpecies(pTarget) || __instance.isSameSubspecies(pTarget.subspecies))
                                                        && !((__instance.hasXenophiles() || !mustBeXenophile)
                                                              && (Util.IsSmart(__instance) && Util.IsSmart(pTarget) || !mustBeSmart)
                                                              && !pTarget.hasXenophobic() || !allowCrossSpeciesLove)) // subspecies stuff!
-                
+
                 // if queer but culture trait says they do not matter
                 || ((!Util.IsOrientationSystemEnabledFor(__instance) || !Util.IsOrientationSystemEnabledFor(pTarget))
                     && !Util.CanReproduce(__instance, pTarget)))
@@ -142,12 +142,19 @@ public class ActorPatch
                 return false;
             }
 
-            if ((__instance.isRelatedTo(pTarget)) && (!__instance.hasCultureTrait("incest") || !pTarget.hasCultureTrait("incest")))
+            if (__instance.isRelatedTo(pTarget) && (!Util.CanCommitIncest(__instance) || !Util.CanCommitIncest(pTarget)))
             {
                 __result = false;
                 return false;
             }
-            
+
+            if (((__instance.hasClan() && __instance.clan.hasTrait(Util.clanboundIsolation) && !pTarget.hasClan())
+                || (pTarget.hasClan() && pTarget.clan.hasTrait(Util.clanboundIsolation) && !__instance.hasClan()))
+                && !Util.IsDyingOut(pTarget) && !Util.IsDyingOut(__instance))
+            {
+                __result = false;
+                return false;
+            }
             __result = true;
 
             // LogService.LogInfo($"Success! They in love :D");

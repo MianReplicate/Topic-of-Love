@@ -342,7 +342,9 @@ namespace Better_Loving
             
             pActor.data.set("sex_reason", "reproduction");
             closestActor.data.set("sex_reason", "reproduction");
-            
+
+            Util.GiveIncestCommitmentTrait(pActor, closestActor);
+
             Util.Debug($"\nAble to make a baby for task?\n{pActor.getName()}: "+(Util.CanMakeBabies(pActor)+$"\n${closestActor.getName()}: "+(Util.CanMakeBabies(closestActor))));
             
             return BehResult.Continue;
@@ -415,6 +417,9 @@ namespace Better_Loving
             
             pActor.data.set("sex_reason", "casual");
             closestActor.data.set("sex_reason", "casual");
+
+            Util.GiveIncestCommitmentTrait(pActor, closestActor);
+
             return BehResult.Continue;
         }
         

@@ -9,12 +9,6 @@ public class CultureManagerPatch
     {
         static void Postfix(Actor pActor, ref Culture __result)
         {
-            // scar_of_incest prevents us from modifying the incest trait
-            if (Util.IsDyingOut(pActor) && !__result.hasTrait("scar_of_incest"))
-            {
-                __result.addTrait("incest");
-            }
-
             if (Randy.randomBool())
             {
                 if (Util.NeedDifferentSexTypeForReproduction(pActor))

@@ -58,18 +58,38 @@ namespace Better_Loving
             Add(heterophobic, List.Of("flower_bud", "garl"));
             Add(orientationLess, List.Of("angle", "snowman"));
             // now influenced by reproduction methods
-            
-            Add(new CultureTrait
+
+            CultureTrait incestTaboo = new CultureTrait
             {
-                id = "incest",
+                id = "incest_taboo",
                 group_id = "miscellaneous",
                 needs_to_be_explored = true,
                 rarity = Rarity.R1_Rare,
                 can_be_in_book = true,
                 can_be_removed = true,
-                can_be_given = true
-            }, List.Of("orc", "demon"), List.Of("biome_infernal", "biome_corrupted"));
-            
+                can_be_given = true,
+                opposite_traits = new HashSet<CultureTrait>()
+            };
+
+            CultureTrait scarOfIncest = new CultureTrait
+            {
+                id = "scar_of_incest",
+                group_id = "miscellaneous",
+                rarity = Rarity.R1_Rare,
+                can_be_given = true,
+                can_be_in_book = false,
+                can_be_removed = true,
+                needs_to_be_explored = true,
+                opposite_traits = new HashSet<CultureTrait>()
+            };
+
+            incestTaboo.opposite_traits.Add(scarOfIncest);
+            scarOfIncest.opposite_traits.Add(incestTaboo);
+
+            Add(incestTaboo, List.Of("human", "civ_dog", "elf", "white_mage", "druid", "civ_penguin", "civ_capybara"), List.Of("biome_celestial"));
+
+            Add(scarOfIncest, List.Of("orc", "demon", "dog", "rat", "civ_rat", "rabbit", "hyena", "civ_hyena", "evil_mage", "sheep", "cow"), List.Of("biome_infernal", "biome_corrupted"));
+
             Add(new CultureTrait
             {
                 id = "committed",
@@ -79,7 +99,7 @@ namespace Better_Loving
                 can_be_in_book = true,
                 can_be_removed = true,
                 can_be_given = true
-            }, List.Of("elf", "coolbeak"), List.Of("biome_celestial", "biome_flower"));
+            }, List.Of("elf", "civ_penguin"), List.Of("biome_celestial", "biome_flower"));
             
             Add(new CultureTrait
             {
@@ -102,16 +122,6 @@ namespace Better_Loving
                 can_be_removed = true,
                 can_be_given = true
             }, List.Of("elf"), List.Of("biome_maple"));
-            
-            Add(new CultureTrait
-            {
-                id = "scar_of_incest",
-                group_id = "miscellaneous",
-                rarity = Rarity.R1_Rare,
-                can_be_given = true,
-                can_be_in_book = false,
-                can_be_removed = true,
-            }, List.Of("orc", "demon"), List.Of("biome_infernal", "biome_corrupted"));
         }
 
         private static void Add(CultureTrait trait, List<string> actorAssets=null, List<string> biomeAssets=null)

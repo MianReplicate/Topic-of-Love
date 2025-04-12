@@ -31,7 +31,7 @@ namespace Better_Loving
                    && actor.hasSubspeciesTrait("wernicke_area");
         }
 
-        public static void AddActorTrait(ActorTrait trait)
+        public static void AddActorTrait(ActorTrait trait, List<string> actorAssets)
         {
             for (int index = 0; index < trait.rate_birth; ++index)
                 AssetManager.traits.pot_traits_birth.Add(trait);
@@ -41,6 +41,14 @@ namespace Better_Loving
                 AssetManager.traits.pot_traits_combat.Add(trait);
 
             AssetManager.traits.add(trait);
+
+            if (actorAssets != null)
+                foreach (string asset in actorAssets)
+                {
+                    ActorAsset actorAsset = AssetManager.actor_library.get(asset);
+                    if (actorAsset != null)
+                        actorAsset.addTrait(trait.id);
+                }
         }
 
         public static bool HasHadSexRecently(Actor actor)
@@ -379,6 +387,42 @@ namespace Better_Loving
         public static bool NeedDifferentSexTypeForReproduction(Actor pActor)
         {
             return pActor.hasSubspeciesTrait("reproduction_sexual");
+        }
+
+        public static bool CanCommitIncest(Actor pActor)
+        {
+            if (!pActor.hasSubspeciesTrait("incest"))
+                return false;
+
+            if (IsDyingOut(pActor))
+                return true;
+
+            if (pActor.clan.hasTrait(Util.clanboundIsolation))
+                return true;
+
+            if (pActor.hasCultureTrait("incest_taboo") && random.Next(1, 60) == 1)
+                return true;
+
+            if (pActor.hasCultureTrait("scar_of_incest") && random.Next(1, 2) == 1)
+                return true;
+
+            if (random.Next(1, 5) == 1)
+                return true;
+        
+            return false;
+        }
+        
+        private static readonly Random random = new();
+
+        public static ClanTrait clanboundIsolation = AssetManager.clan_traits.get("clanbound_isolation");
+
+        public static void GiveIncestCommitmentTrait(Actor actor1, Actor actor2)
+        {
+            if (actor1.isRelatedTo(actor2))
+            {
+                actor1.addTrait("committed_incest");
+                actor2.addTrait("committed_incest");
+            }
         }
     }
 }
