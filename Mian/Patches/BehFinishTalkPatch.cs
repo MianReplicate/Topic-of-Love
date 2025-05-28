@@ -26,13 +26,13 @@ public class BehFinishTalkPatch
         if (pActor.hasCulture() && pActor.culture.hasTrait("elder_reverence") && __instance.throwDiceForGift(pActor, pTarget) && pActor.isAdult() && pTarget.getAge() > pActor.getAge())
             __instance.makeGift(pActor, pTarget);
         __instance.checkPassLearningAttributes(pActor, pTarget);
-        if (num1 != 0 && Randy.randomChance(pActor.getBestFriend() == pTarget ? 0.75f : 0.25f))
+        if (num1 != 0 && Randy.randomChance(pActor.hasLover() ? 0.01f : pActor.getBestFriend() == pTarget ? 0.75f : 0.25f))
         {
             ActorTool.checkFallInLove(pActor, pTarget);
         }
         float num2 = Randy.randomFloat(1.1f, 3.3f);
         pActor.timer_action = num2;
-        pTarget.timer_action = num2;   
+        pTarget.timer_action = num2;
         return false;
     }
 }

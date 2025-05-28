@@ -194,6 +194,7 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
         public static bool PreferenceMatches(Actor pActor, Actor pTarget, bool sexual)
         {
             return PreferenceMatches(pActor, pTarget, "identity", sexual) 
+                   && !Dislikes(pActor, sexual)
                    && PreferenceMatches(pActor, pTarget, "expression", sexual)
                    && (!sexual || PreferenceMatches(pActor, pTarget, "genital", true));
         }

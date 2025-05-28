@@ -46,7 +46,13 @@ public class BehCheckIfDateFinish : BehaviourActionActor
 
         if (happiness >= (pActor.getBestFriend() == target ? 10f : 25f))
         {
-            ActorTool.checkFallInLove(pActor, target);
+            if(pActor.hasLover() && Randy.randomBool())
+                TolUtil.BreakUp(pActor, false);
+            if(target.hasLover() && Randy.randomBool())
+                TolUtil.BreakUp(target, false);
+            TolUtil.PotentiallyCheatedWith(pActor, target);
+            TolUtil.PotentiallyCheatedWith(target, pActor);
+            pActor.becomeLoversWith(target);
         }
 
         target.cancelAllBeh();

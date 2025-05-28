@@ -136,7 +136,7 @@ namespace Topic_of_Love.Mian
             
             if (intimacyHappiness < 0)
             {
-                var toReduce = intimacyHappiness / 300;
+                var toReduce = intimacyHappiness / 500;
                 reduceChances += toReduce;
             }
 
@@ -146,7 +146,7 @@ namespace Topic_of_Love.Mian
             reduceChances = Math.Max(-0.2f, reduceChances);
 
             if(!allowedToHaveIntimacy
-               && Randy.randomChance(Math.Max(0, (pActor.hasTrait("unfaithful") ? 0.6f : .99f) + reduceChances)))
+               && Randy.randomChance(Math.Max(0, (pActor.hasTrait("unfaithful") ? 0.6f : 1f) + reduceChances)))
             {
                 Debug("Not allowed to do intimacy because of lover and not low enough happiness");
                 return false;
@@ -267,8 +267,8 @@ namespace Topic_of_Love.Mian
             {
                 var cheatedActor = actor.lover;
                 // will they know :O
-                if (cheatedActor.isLying() || !cheatedActor.isOnSameIsland(actor))
-                    return;
+                // if (cheatedActor.isLying() || !cheatedActor.isOnSameIsland(actor))
+                    // return;
                 
                 // HandleFamilyRemoval(actor);
 
@@ -377,37 +377,33 @@ namespace Topic_of_Love.Mian
             return false;
         }
 
-        public static bool Socialized(BehaviourActionActor __instance, Actor pActor, Actor target)
+        public static bool PossibleSocializePostTask(Actor pActor, Actor target, BehaviourActionActor __instance=null)
         {
-            if (IsOrientationSystemEnabledFor(pActor) && IsOrientationSystemEnabledFor(target))
+            if (Randy.randomBool())
             {
-                if (Randy.randomBool())
+                if (pActor.lover != target)
                 {
-                    if (pActor.lover != target)
+                    if (pActor.canFallInLoveWith(target) 
+                        && WillDoIntimacy(pActor, null, false, true)
+                        && WillDoIntimacy(target, null, false))
                     {
-                        if (pActor.canFallInLoveWith(target) 
-                            && WillDoIntimacy(pActor, null, false, true)
-                            && WillDoIntimacy(target, null, false))
-                        {
-                            // does date instead
+                        // does date instead
+                        if(__instance != null)
                             __instance.forceTask(pActor, "try_date", false);
-                            return true;
-                        }   
-                    }
-                    else if(WillDoIntimacy(pActor, "casual", pActor.lover == target, true) 
-                            && WillDoIntimacy(target, "casual", pActor.lover == target, false))
-                    {
-                        pActor.cancelAllBeh();
-                        target.cancelAllBeh();
-                        pActor.beh_actor_target = target;
-                        new BehGetPossibleTileForSex().execute(pActor);
+                        else
+                            pActor.setTask("try_date", false);
                         return true;
                     }   
                 }
-            }
-            else
-            {
-                ActorTool.checkFallInLove(pActor, target);
+                else if(WillDoIntimacy(pActor, "casual", pActor.lover == target, true) 
+                        && WillDoIntimacy(target, "casual", pActor.lover == target, false))
+                {
+                    pActor.cancelAllBeh();
+                    target.cancelAllBeh();
+                    pActor.beh_actor_target = target;
+                    new BehGetPossibleTileForSex().execute(pActor);
+                    return true;
+                }   
             }
 
             return false;

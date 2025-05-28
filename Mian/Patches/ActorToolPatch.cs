@@ -14,14 +14,22 @@ public class ActorToolPatch
             return false;
         if (!pActor.canFallInLoveWith(pTarget))
             return false;
-        if(pActor.hasLover() && Randy.randomBool())
-            TolUtil.BreakUp(pActor, false);
-        if(pTarget.hasLover() && Randy.randomBool())
-            TolUtil.BreakUp(pTarget, false);
-        TolUtil.PotentiallyCheatedWith(pActor, pTarget);
-        TolUtil.PotentiallyCheatedWith(pTarget, pActor);
+        if ((TolUtil.WillDoIntimacy(pActor, null, false) 
+             || !TolUtil.IsOrientationSystemEnabledFor(pActor)) && (TolUtil.WillDoIntimacy(pTarget, null, false)
+            || !TolUtil.IsOrientationSystemEnabledFor(pTarget)))
+        {
+            if(pActor.hasLover() && Randy.randomBool())
+                TolUtil.BreakUp(pActor, false);
+            if(pTarget.hasLover() && Randy.randomBool())
+                TolUtil.BreakUp(pTarget, false);
+            TolUtil.PossibleSocializePostTask(pActor, pTarget);
+            return false;
+        }
 
-        pActor.becomeLoversWith(pTarget);
+        if (!TolUtil.IsOrientationSystemEnabledFor(pActor) || !TolUtil.IsOrientationSystemEnabledFor(pTarget))
+        {
+            pActor.becomeLoversWith(pTarget);
+        }
         return false;
     }
 }

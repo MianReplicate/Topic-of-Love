@@ -23,7 +23,7 @@ public class BehTryToSocializePatch
 
         if (TolUtil.IsOrientationSystemEnabledFor(pActor))
         {
-            if (TolUtil.Socialized(__instance, pActor, randomActorAround))
+            if (TolUtil.PossibleSocializePostTask(pActor, randomActorAround, __instance))
             {
                 return false;
             }  

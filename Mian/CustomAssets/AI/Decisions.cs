@@ -33,7 +33,6 @@ public class Decisions
             cooldown = 15,
             action_check_launch = actor => actor.isSapient()
                                            && (actor.hasLover() || actor.hasBestFriend())
-                                           && !TolUtil.IsIntimacyHappinessEnough(actor, 100f)
                                            && TolUtil.IsOrientationSystemEnabledFor(actor)
                                            && !actor.hasStatus("just_kissed"),
             list_civ = true,
