@@ -9,6 +9,7 @@ using Topic_of_Love.Mian.CustomAssets;
 using Topic_of_Love.Mian.CustomAssets.AI;
 using Topic_of_Love.Mian.CustomAssets.Traits;
 using HarmonyLib;
+using HarmonyLib.Tools;
 using Newtonsoft.Json;
 using Topic_of_Love.Mian.CustomAssets.Custom;
 using UnityEngine;
@@ -30,7 +31,8 @@ namespace Topic_of_Love.Mian
         private void Awake()
         {
             Instance = this;
-            Harmony.DEBUG = true;
+            Logger = base.Logger;
+            HarmonyFileLog.Enabled = true;
             
             var harmony = new Harmony("netdot.mian.topicofloving");
             harmony.PatchAll();
