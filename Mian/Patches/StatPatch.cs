@@ -122,7 +122,7 @@ public class StatPatch
                 var lonelyIcon = CreateNewIcon(
                     lonelinessGroup,
                     iconTemplate,
-                    "loneliness",
+                    "lonely",
                     Resources.Load<Sprite>("ui/Icons/status/broke_up"));
                 __instance._stats_icons.Add(lonelyIcon.name, lonelyIcon);
             }
@@ -134,7 +134,7 @@ public class StatPatch
                 __instance.setIconValue(orientationType+"_romantic", pMetaObject.countOrientation(orientationType, false));
             });
             
-            __instance.setIconValue("loneliness", World.world.units.Count(unit => TolUtil.GetIntimacy(unit) < 0 && TolUtil.AffectedByIntimacy(unit)));
+            __instance.setIconValue("lonely", pMetaObject.countLonely());
     }
     
     [HarmonyPostfix]

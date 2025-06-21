@@ -510,7 +510,7 @@ namespace Topic_of_Love.Mian
 
         public static void LogInfo(string message)
         {
-            TopicOfLove.LogInfo(message);
+            TopicOfLove.Logger.LogInfo(message);
         }
 
         public static string[] GetKeywords(string word)

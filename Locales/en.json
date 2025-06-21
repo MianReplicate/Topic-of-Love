@@ -238,15 +238,21 @@
   
   "orientations_lesbian_description": "They statistically pull more women than straight men ever could",
   "orientations_gay_description": "They statistically pull more men than straight woman ever could",
-  "orientations_straight_description": "They statistically are boring as fuck",
+  "orientations_straight_description": "According to a local human, most of the species in the world including homosapiens are often straight by default for reproduction purposes. Therefore, straight people are statistically boring as fuck.",
   "orientations_bisexual_description": "They statistically love swinging back and forth",
   "orientations_pansexual_description": "They don't actually like pans, dumbass",
   "orientations_heterosexual_description": "They like a sex different from them",
   "orientations_homosexual_description": "They like those that are of the same sex as them",
   "orientations_asexual_description": "Romantic/sexual intimacy is bleh to them",
   
-  "statistic_loneliness": "Lonely Units",
-  "statistic_loneliness_description": "They just want a hug or to talk to someone",
+  "statistic_lonely": "Lonely Units",
+  "statistic_lonely_description": "They just want someone to care :(",
+  
+  "lonely": "Lonely",
+  "lonely_description": "They just want someone to care :(",
+  
+  "world_statistics_lonely": "Lonely Population",
+  "world_statistics_lonely_description": "They just want someone to care :(",
   
   "opinion_homosexual": "Opinions on Homosexuality",
   "opinion_heterosexual": "Opinions on Heterosexuality",

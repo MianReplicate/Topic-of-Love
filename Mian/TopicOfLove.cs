@@ -1,17 +1,20 @@
 using System.IO;
+using BepInEx;
+using BepInEx.Logging;
+using db;
 using Topic_of_Love.Mian.CustomAssets;
 using Topic_of_Love.Mian.CustomAssets.AI;
 using Topic_of_Love.Mian.CustomAssets.Traits;
-using NeoModLoader.api;
 using HarmonyLib;
-using NeoModLoader.General;
 using Topic_of_Love.Mian.CustomAssets.Custom;
+using UnityEngine;
 
 namespace Topic_of_Love.Mian
 {
-    public class TopicOfLove : BasicMod<TopicOfLove>
+    [BepInPlugin("netdot.mian.topic_of_love", "Topic of Love", "1.0.0")]
+    public class TopicOfLove : BaseUnityPlugin
     {
-        public static BasicMod<TopicOfLove> Mod;
+        public new static ManualLogSource Logger;
         public void Reload()
         {
             var localeDir = GetLocaleFilesDirectory(GetDeclaration());
@@ -29,9 +32,14 @@ namespace Topic_of_Love.Mian
 
             LM.ApplyLocale();
         }
-        protected override void OnModLoad()
+        
+        private void Awake()
         {
-            Mod = this;
+            Harmony.DEBUG = true;
+            
+            var harmony = new Harmony("netdot.mian.topicofloving");
+            harmony.PatchAll();
+            
             // Initialize your mod.
             // Methods are called in the order: OnLoad -> Awake -> OnEnable -> Start -> Update
             TolUtil.LogInfo("Making people more loveable!");
@@ -47,17 +55,14 @@ namespace Topic_of_Love.Mian
             Opinions.Init();
             BaseStatAssets.Init(); // make sure this loads before preferences
             WorldLawAssets.Init();
+            StatisticAssets.Init();
+            HistoryDataAssets.Init();
             GodPowers.Init();
             TabsAndButtons.Init();
             Orientations.Init();
             Preferences.Init();
-        }
-        private void Awake()
-        {
-            Harmony.DEBUG = true;
             
-            var harmony = new Harmony("netdot.mian.topicofloving");
-            harmony.PatchAll();
+            Debug.Log("working");
         }
     }
 }

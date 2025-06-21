@@ -6,16 +6,21 @@
     <PropertyGroup>
         <RootNamespace>Topic_of_Love</RootNamespace>
         <AssemblyName>Topic_of_Love</AssemblyName>
+        <Product>A mod that allows units to have intimacy and fall in love for more than just their ability to reproduce!</Product>
         <TargetFramework>net48</TargetFramework>
         <DefineConstants>DEBUG;TRACE;TOPICOFIDENTITY</DefineConstants>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>disable</Nullable>
-        <LangVersion>11</LangVersion>
+        <LangVersion>latest</LangVersion>
+        <RestoreAdditionalProjectSources>
+            https://api.nuget.org/v3/index.json;
+            https://nuget.bepinex.dev/v3/index.json;
+            https://nuget.samboy.dev/v3/index.json
+        </RestoreAdditionalProjectSources>
         <OutputType>Library</OutputType>
     </PropertyGroup>
     <ItemGroup>
-        <Compile Include="AssemblyInfo.cs" />
         <Compile Include="Mian\CustomAssets\AI\ActorBehaviorTasks.cs" />
         <Compile Include="Mian\CustomAssets\AI\CustomBehaviors\ivf\BehCheckForSexualIvf.cs" />
         <Compile Include="Mian\CustomAssets\AI\CustomBehaviors\ivf\BehStartSexualIvf.cs" />
@@ -40,7 +45,9 @@
         <Compile Include="Mian\CustomAssets\Custom\Preferences.cs" />
         <Compile Include="Mian\CustomAssets\GodPowers.cs" />
         <Compile Include="Mian\CustomAssets\Happiness.cs" />
+        <Compile Include="Mian\CustomAssets\HistoryDataAssets.cs" />
         <Compile Include="Mian\CustomAssets\Opinions.cs" />
+        <Compile Include="Mian\CustomAssets\StatisticAssets.cs" />
         <Compile Include="Mian\CustomAssets\StatusEffects.cs" />
         <Compile Include="Mian\CustomAssets\TabsAndButtons.cs" />
         <Compile Include="Mian\CustomAssets\Traits\ActorTraits.cs" />
@@ -65,28 +72,25 @@
         <Compile Include="Mian\Patches\SpriteTextureLoaderPatch.cs" />
         <Compile Include="Mian\Patches\SubspeciesPatch.cs" />
         <Compile Include="Mian\Patches\StatPatch.cs" />
+        <Compile Include="Mian\Patches\test.cs" />
         <Compile Include="Mian\TopicOfLove.cs" />
         <Compile Include="Mian\TolUtil.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="default_config.json" />
+      <Folder Include="Assemblies\" />
       <Folder Include="Locales\" />
       <Content Include="mod.json" />
       <Folder Include="Properties\" />
     </ItemGroup>
     <ItemGroup>
-        <Reference Include="NeoModLoader">
-            <HintPath>..\..\worldbox_Data\StreamingAssets\mods\NeoModLoader.dll</HintPath>
-        </Reference>
-        <Reference Include="0Harmony">
-            <HintPath>..\..\worldbox_Data\StreamingAssets\mods\NML\Assemblies\0Harmony.dll</HintPath>
-        </Reference>
         <Reference Include="Assembly-CSharp">
-            <HintPath>..\..\worldbox_Data\StreamingAssets\mods\NML\Assembly-CSharp-Publicized.dll</HintPath>
+            <HintPath>Assemblies\Assembly-CSharp_publicized.dll</HintPath>
         </Reference>
-        <Reference Include="UnityEngine">
-            <HintPath>..\..\worldbox_Data\Managed\UnityEngine.dll</HintPath>
-        </Reference>
+        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+        <PackageReference Include="BepInEx.Core" Version="5.*" />
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+        <PackageReference Include="UnityEngine.Modules" Version="2020.3.48" IncludeAssets="compile" />
         <Reference Include="UnityEngine.CoreModule">
             <HintPath>..\..\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
