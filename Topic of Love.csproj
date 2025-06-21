@@ -21,6 +21,7 @@
         <OutputType>Library</OutputType>
     </PropertyGroup>
     <ItemGroup>
+        <Compile Include="Mian\TolConfig.cs" />
         <Compile Include="Mian\CustomAssets\AI\ActorBehaviorTasks.cs" />
         <Compile Include="Mian\CustomAssets\AI\CustomBehaviors\ivf\BehCheckForSexualIvf.cs" />
         <Compile Include="Mian\CustomAssets\AI\CustomBehaviors\ivf\BehStartSexualIvf.cs" />

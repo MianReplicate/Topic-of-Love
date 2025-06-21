@@ -6,9 +6,9 @@ using ai.behaviours;
 using Topic_of_Love.Mian.CustomAssets.AI.CustomBehaviors.sex;
 using Topic_of_Love.Mian.CustomAssets.Custom;
 
-#if TOPICOFIDENTITY
-using Topic_of_Identity;
-#endif
+// #if TOPICOFIDENTITY
+// using Topic_of_Identity;
+// #endif
 
 namespace Topic_of_Love.Mian
 {
@@ -520,11 +520,10 @@ namespace Topic_of_Love.Mian
         
         public static void Debug(object message)
         {
-            var config = TopicOfLove.Mod.GetConfig();
-            var slowOnLog = GetKeywords((string)config["Misc"]["SlowOnLog"].GetValue());
-            var stackTrace = GetKeywords((string)config["Misc"]["StackTrace"].GetValue());
-            var ignore = GetKeywords((string)config["Misc"]["Ignore"].GetValue());
-            var debug = (bool)config["Misc"]["Debug"].GetValue();
+            var slowOnLog = GetKeywords(TolConfig.SlowOnLog.Value);
+            var stackTrace = GetKeywords(TolConfig.StackTrace.Value);
+            var ignore = GetKeywords(TolConfig.Ignore.Value);
+            var debug = TolConfig.Debug.Value;
 
             var stringMsg = message.ToString();
 

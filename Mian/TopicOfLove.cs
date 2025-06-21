@@ -37,6 +37,7 @@ namespace Topic_of_Love.Mian
             // Methods are called in the order: OnLoad -> Awake -> OnEnable -> Start -> Update
             TolUtil.LogInfo("Making people more loveable!");
             
+            TolConfig.Init(this); // start first
             new ActorTraits().Init();
             new CultureTraits().Init();
             new SubspeciesTraits().Init();
