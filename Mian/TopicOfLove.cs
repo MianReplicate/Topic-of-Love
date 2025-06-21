@@ -19,6 +19,7 @@ namespace Topic_of_Love.Mian
     [BepInPlugin("netdot.mian.topic_of_love", "Topic of Love", "1.0.0")]
     public class TopicOfLove : BaseUnityPlugin
     {
+        public static TopicOfLove Instance;
         public new static ManualLogSource Logger;
 
         public static string GetModDirectory()
@@ -28,6 +29,7 @@ namespace Topic_of_Love.Mian
         
         private void Awake()
         {
+            Instance = this;
             Harmony.DEBUG = true;
             
             var harmony = new Harmony("netdot.mian.topicofloving");
