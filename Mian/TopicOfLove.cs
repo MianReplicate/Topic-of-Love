@@ -1,4 +1,7 @@
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using BepInEx;
 using BepInEx.Logging;
 using db;
@@ -6,31 +9,21 @@ using Topic_of_Love.Mian.CustomAssets;
 using Topic_of_Love.Mian.CustomAssets.AI;
 using Topic_of_Love.Mian.CustomAssets.Traits;
 using HarmonyLib;
+using Newtonsoft.Json;
 using Topic_of_Love.Mian.CustomAssets.Custom;
 using UnityEngine;
 
+// TODO: add NML loading compatibility for workshop support & all
 namespace Topic_of_Love.Mian
 {
     [BepInPlugin("netdot.mian.topic_of_love", "Topic of Love", "1.0.0")]
     public class TopicOfLove : BaseUnityPlugin
     {
         public new static ManualLogSource Logger;
-        public void Reload()
-        {
-            var localeDir = GetLocaleFilesDirectory(GetDeclaration());
-            foreach (var file in Directory.GetFiles(localeDir))
-            {
-                if (file.EndsWith(".json"))
-                {
-                    LM.LoadLocale(Path.GetFileNameWithoutExtension(file), file);
-                }
-                else if (file.EndsWith(".csv"))
-                {
-                    LM.LoadLocales(file);
-                }
-            }
 
-            LM.ApplyLocale();
+        public static string GetModDirectory()
+        {
+            return Environment.CurrentDirectory;
         }
         
         private void Awake()
@@ -62,6 +55,7 @@ namespace Topic_of_Love.Mian
             Orientations.Init();
             Preferences.Init();
             
+            LM.LoadLocales(); // run last
             Debug.Log("working");
         }
     }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NeoModLoader.General;
 using UnityEngine;
 
 namespace Topic_of_Love.Mian.CustomAssets.Custom;
@@ -66,10 +65,10 @@ public class Orientation
             romanticPathIcon, isHomo, isHetero, hexCode, fitsCriteria);
         Orientations.Add(orientationType);
 
-        LM.AddToCurrentLocale(pathLocale, char.ToUpper(orientation.First()) + orientation.Substring(1));
-        LM.AddToCurrentLocale(romanticPathLocale, char.ToUpper(romanticVariant.First()) + romanticVariant.Substring(1));
-        LM.AddToCurrentLocale("count_" + pathLocale, char.ToUpper(orientation.First()) + orientation.Substring(1) + "s");
-        LM.AddToCurrentLocale("count_" + romanticPathLocale, char.ToUpper(romanticVariant.First()) + romanticVariant.Substring(1) + "s");
+        LM.AddToCore(pathLocale, char.ToUpper(orientation.First()) + orientation.Substring(1));
+        LM.AddToCore(romanticPathLocale, char.ToUpper(romanticVariant.First()) + romanticVariant.Substring(1));
+        LM.AddToCore("count_" + pathLocale, char.ToUpper(orientation.First()) + orientation.Substring(1) + "s");
+        LM.AddToCore("count_" + romanticPathLocale, char.ToUpper(romanticVariant.First()) + romanticVariant.Substring(1) + "s");
         return orientationType;
     }
 

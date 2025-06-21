@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using HarmonyLib;
-using NeoModLoader.General;
-using NeoModLoader.services;
 using Topic_of_Love.Mian.CustomAssets;
 using Topic_of_Love.Mian.CustomAssets.Custom;
 using Topic_of_Love.Mian.CustomAssets.Traits;
@@ -45,7 +43,7 @@ public class StatPatch
             {
 
                 Dictionary<string, string> dict = new();
-                dict.Add("value", LM.Get(orientationType.SexualPathLocale));
+                dict.Add("value", LocalizedTextManager.getText(orientationType.SexualPathLocale));
                 dict.Add("hex_code", orientationType.HexCode);
                 dict.Add("icon", orientationType.SexualPathIcon);
 
@@ -59,7 +57,7 @@ public class StatPatch
             if (orientationType != null)
             {
                 Dictionary<string, string> dict = new();
-                dict.Add("value", LM.Get(orientationType.RomanticPathLocale));
+                dict.Add("value", LocalizedTextManager.getText(orientationType.RomanticPathLocale));
                 dict.Add("hex_code", orientationType.HexCode);
                 dict.Add("icon", orientationType.RomanticPathIcon);
 
@@ -74,7 +72,7 @@ public class StatPatch
         var baseIcon = GameObject.Instantiate(iconTemplate, parent);
         var icon = baseIcon.GetComponent<StatsIcon>();
         var iconText = baseIcon.GetComponent<TipButton>();
-        iconText.textOnClick = LM.Get("statistic_"+id);
+        iconText.textOnClick = LocalizedTextManager.getText("statistic_"+id);
         iconText.textOnClickDescription = "statistic_"+id+"_description";
         icon.name = id;
         icon.getIcon().sprite = sprite;
@@ -108,7 +106,7 @@ public class StatPatch
                         var baseIcon = GameObject.Instantiate(iconTemplate, iconGroup);
                         var icon = baseIcon.GetComponent<StatsIcon>();
                         var iconText = baseIcon.GetComponent<TipButton>();
-                        iconText.textOnClick = LM.Get("count_"+(isSexual ? orientation.SexualPathLocale : orientation.RomanticPathLocale));
+                        iconText.textOnClick = LocalizedTextManager.getText("count_"+(isSexual ? orientation.SexualPathLocale : orientation.RomanticPathLocale));
                         iconText.textOnClickDescription = orientation.DescriptionLocale;
                         icon.name = isSexual ? orientation.OrientationType : orientation.OrientationType + "_romantic";
                         icon.getIcon().sprite = Resources.Load<Sprite>("ui/Icons/" + (isSexual ? orientation.SexualPathIcon : orientation.RomanticPathIcon));
@@ -280,7 +278,7 @@ public class StatPatch
                 var baseIcon = GameObject.Instantiate(iconTemplate, iconGroup);
                 var icon = baseIcon.GetComponent<StatsIcon>();
                 var iconText = baseIcon.GetComponent<TipButton>();
-                iconText.textOnClick = LM.Get("stats_icon_"+iconData.Name);
+                iconText.textOnClick = LocalizedTextManager.getText("stats_icon_"+iconData.Name);
                 icon.name = iconData.Name;
                 icon.getIcon().sprite = Resources.Load<Sprite>(iconData.IconPath);
             }

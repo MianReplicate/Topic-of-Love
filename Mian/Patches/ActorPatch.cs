@@ -5,8 +5,6 @@ using System.Reflection;
 using System.Reflection.Emit;
 using EpPathFinding.cs;
 using HarmonyLib;
-using NeoModLoader.General;
-using NeoModLoader.services;
 using Topic_of_Love.Mian.CustomAssets;
 using Topic_of_Love.Mian.CustomAssets.Custom;
 using UnityEngine.Rendering;
@@ -299,7 +297,7 @@ public class ActorPatch
 
             codeMatcher = codeMatcher
                 .Start()
-                .MatchStartForward(new CodeMatch(OpCodes.Call,
+                .MatchForward(false, new CodeMatch(OpCodes.Call,
                     AccessTools.Method(typeof(Actor), nameof(Actor.isSameSpecies), new[]{typeof(Actor)})))
                 .ThrowIfInvalid("Could not find isSameSpecies! Did someone remove this... grrrrrr")
                 .Advance(1);

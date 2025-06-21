@@ -56,6 +56,7 @@
         <Compile Include="Mian\CustomAssets\Traits\SubspeciesTraits.cs" />
         <Compile Include="Mian\CustomAssets\WorldLawAssets.cs" />
         <Compile Include="Mian\Extensions.cs" />
+        <Compile Include="Mian\LM.cs" />
         <Compile Include="Mian\Patches\ActorManagerPatch.cs" />
         <Compile Include="Mian\Patches\ActorPatch.cs" />
         <Compile Include="Mian\Patches\ActorToolPatch.cs" />
@@ -90,12 +91,13 @@
         <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
         <PackageReference Include="BepInEx.Core" Version="5.*" />
         <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="UnityEngine.Modules" Version="2020.3.48" IncludeAssets="compile" />
         <Reference Include="UnityEngine.CoreModule">
-            <HintPath>..\..\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+            <HintPath>..\..\..\worldbox_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UI">
-            <HintPath>..\..\worldbox_Data\Managed\UnityEngine.UI.dll</HintPath>
+            <HintPath>..\..\..\worldbox_Data\Managed\UnityEngine.UI.dll</HintPath>
         </Reference>
     </ItemGroup>
     

@@ -14,7 +14,7 @@ public class BehFinishTalkPatch
     {
         var codeMatcher = new CodeMatcher(instructions, generator);
 
-        codeMatcher.MatchStartForward(new CodeMatch(OpCodes.Call,
+        codeMatcher.MatchForward(false, new CodeMatch(OpCodes.Call,
             AccessTools.Method(typeof(ActorTool), nameof(ActorTool.checkFallInLove), new[]{typeof(Actor), typeof(Actor)})))
             .ThrowIfInvalid("Could not find checkFallInLove.. damn game update :(")
             .Advance(-3);

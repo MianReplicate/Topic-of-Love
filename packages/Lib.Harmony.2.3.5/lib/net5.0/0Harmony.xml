@@ -3162,12 +3162,12 @@
             <param name="predicate">The predicate</param>
             <returns>The same code matcher</returns>
         </member>
-        <member name="M:HarmonyLib.CodeMatcher.MatchStartForward(HarmonyLib.CodeMatch[])">
+        <member name="M:HarmonyLib.CodeMatcher.MatchForward(false, HarmonyLib.CodeMatch[])">
             <summary>Matches forward and advances position to beginning of matching sequence</summary>
             <param name="matches">Some code matches</param>
             <returns>The same code matcher</returns>
         </member>
-        <member name="M:HarmonyLib.CodeMatcher.PrepareMatchStartForward(HarmonyLib.CodeMatch[])">
+        <member name="M:HarmonyLib.CodeMatcher.PrepareMatchForward(false, HarmonyLib.CodeMatch[])">
             <summary>Prepares matching forward and advancing position to beginning of matching sequence</summary>
             <param name="matches">Some code matches</param>
             <returns>The same code matcher</returns>

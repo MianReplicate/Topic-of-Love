@@ -1,7 +1,6 @@
 ﻿using Topic_of_Love.Mian.CustomAssets;
 using Topic_of_Love.Mian.CustomAssets.Traits;
 using HarmonyLib;
-using NeoModLoader.services;
 
 namespace Topic_of_Love.Mian.Patches;
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using ai.behaviours;
 using HarmonyLib;
-using NeoModLoader.services;
 
 namespace Topic_of_Love.Mian.Patches;
 
@@ -30,14 +29,14 @@ public class BehSHFBPatch
     {
         var codeMatcher = new CodeMatcher(instructions, generator);
         
-        codeMatcher.MatchStartForward(new CodeMatch(OpCodes.Callvirt,
+        codeMatcher.MatchForward(false, new CodeMatch(OpCodes.Callvirt,
             AccessTools.Method(typeof(Actor), nameof(Actor.hasLover)))).Advance(1);
         var operandLabel = (Label)codeMatcher.Operand;
         codeMatcher.RemoveInstructionsInRange(codeMatcher.Pos - 2, codeMatcher.Pos);
         
         try
         {
-            var afterglowPos = codeMatcher.Start().MatchStartForward(new CodeMatch(OpCodes.Callvirt,
+            var afterglowPos = codeMatcher.Start().MatchForward(false, new CodeMatch(OpCodes.Callvirt,
                     AccessTools.Method(typeof(Actor), nameof(Actor.addAfterglowStatus))))
                 .Pos;
             codeMatcher.RemoveInstructionsInRange(afterglowPos - 1, afterglowPos + 4);

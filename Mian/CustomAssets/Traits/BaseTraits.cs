@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
-using NeoModLoader.services;
 
 namespace Topic_of_Love.Mian.CustomAssets.Traits;
 

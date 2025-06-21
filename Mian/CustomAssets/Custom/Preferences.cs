@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NCMS.Extensions;
-using NeoModLoader.General;
-using NeoModLoader.services;
-#if TOPICOFIDENTITY
-using Topic_of_Identity.Mian;
-#endif
+using MonoMod.Utils;
+using UnityEngine.SocialPlatforms;
+
+// #if TOPICOFIDENTITY
+// using Topic_of_Identity.Mian;
+// #endif
 
 namespace Topic_of_Love.Mian.CustomAssets.Custom
 {
@@ -46,7 +46,7 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
         {
             if (PreferenceTypes.ContainsKey(type))
             {
-                LogService.LogError(type + " is already an added preference type!");
+                TopicOfLove.Logger.LogError(type + " is already an added preference type!");
                 return;
             }
 
@@ -73,8 +73,7 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
 
             nameWithPlural = stringBuilder.ToString();
             
-            if(!LM.Has("trait_group_"+type))
-                LM.AddToCurrentLocale("trait_group_"+type, "Preferred " + nameWithPlural);
+            LM.AddToCore("trait_group_"+type, "Preferred " + nameWithPlural);
 
             var preferenceTraits = new List<PreferenceTrait>();
 
@@ -91,13 +90,10 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
                     romanticTrait.opposite_traits = new HashSet<ActorTrait>();
                     romanticTraits.Add(romanticTrait);
 
-                    if (!LM.Has("trait_" + preference + "_romantic"))
-                        LM.AddToCurrentLocale("trait_" + preference + "_romantic", 
-                            "Prefers " + preference.Substring(0, 1).ToUpper() + preference.Substring(1) + " (Romantic)");
-                    if (!LM.Has("trait_" + preference + "_romantic_info"))
-                        LM.AddToCurrentLocale("trait_" + preference + "_romantic_info", "Romantically prefers " + preference);
-                    if (!LM.Has("trait_" + preference + "_romantic_info_2"))
-                        LM.AddToCurrentLocale("trait_" + preference + "_romantic_info_2", "");
+                    LM.AddToCore("trait_" + preference + "_romantic", 
+                        "Prefers " + preference.Substring(0, 1).ToUpper() + preference.Substring(1) + " (Romantic)");
+                    LM.AddToCore("trait_" + preference + "_romantic_info", "Romantically prefers " + preference);
+                    LM.AddToCore("trait_" + preference + "_romantic_info_2", "");
                 }
                 AllTraits.AddRange(romanticTraits);
                 preferenceTraits.AddRange(romanticTraits);
@@ -115,13 +111,10 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
                 sexualTrait.opposite_traits = new HashSet<ActorTrait>();
                 sexualTraits.Add(sexualTrait);
                 
-                if (!LM.Has("trait_" + preference + "_sexual"))
-                    LM.AddToCurrentLocale("trait_" + preference + "_sexual", 
-                        "Prefers " + preference.Substring(0, 1).ToUpper() + preference.Substring(1) + (canBeRomantic ? " (Sexual)" : ""));
-                if (!LM.Has("trait_" + preference + "_sexual_info"))
-                    LM.AddToCurrentLocale("trait_" + preference + "_sexual_info", "Sexually prefers " + preference);
-                if (!LM.Has("trait_" + preference + "_sexual_info_2"))
-                    LM.AddToCurrentLocale("trait_" + preference + "_sexual_info_2", "");            
+                LM.AddToCore("trait_" + preference + "_sexual", 
+                    "Prefers " + preference.Substring(0, 1).ToUpper() + preference.Substring(1) + (canBeRomantic ? " (Sexual)" : ""));
+                LM.AddToCore("trait_" + preference + "_sexual_info", "Sexually prefers " + preference);
+                LM.AddToCore("trait_" + preference + "_sexual_info_2", "");            
             }
             AllTraits.AddRange(sexualTraits);
             preferenceTraits.AddRange(sexualTraits);
@@ -179,7 +172,6 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
                     }
                 }
             }
-            LM.ApplyLocale("en");
         }
 
         // checks for one actor based on a type, if you are checking for multiple types or multiple actors, then use the other methods
@@ -377,7 +369,7 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
         public static List<PreferenceTrait> GetAllPreferences()
         {
             var list = new List<PreferenceTrait>();
-            PreferenceTypes.Values.ForEach(list.AddRange);
+            PreferenceTypes.Values.ToList().ForEach(list.AddRange);
             return list;
         }
         public static PreferenceTrait RandomPreferenceFromType(string type, bool sexual = false)
