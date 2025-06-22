@@ -46,22 +46,6 @@ namespace Topic_of_Love.Mian.CustomAssets.Traits
             
             Add(reproductionSameSex, new[]{"skeleton"});
             AssetManager.actor_library.get("skeleton").addSubspeciesTrait("reproduction_strategy_viviparity");
-            
-            Finish();
-        }
-
-        protected override void Finish()
-        {
-            foreach (SubspeciesTrait pObject in _assets)
-            {
-                if (pObject.in_mutation_pot_add)
-                    AssetManager.subspecies_traits._pot_mutation_traits_add.AddTimes(pObject.rarity.GetRate(), pObject);
-                if (pObject.in_mutation_pot_remove)
-                    AssetManager.subspecies_traits._pot_mutation_traits_remove.AddTimes(pObject.rarity.GetRate(), pObject);
-                if (pObject.phenotype_egg && pObject.after_hatch_from_egg_action != null)
-                    pObject.has_after_hatch_from_egg_action = true;
-            }
-            base.Finish();
         }
     }
 }

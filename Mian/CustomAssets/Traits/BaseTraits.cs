@@ -21,26 +21,26 @@ public class BaseTraits<T, TR>
         _library = (TR) AssetManager._instance._list.Find(library => typeof(TR) == library.GetType());
     }
 
-    protected virtual void Finish()
-    {
-        foreach (T pObject in _assets)
-        {
-            if (pObject.spawn_random_trait_allowed)
-                _library._pot_allowed_to_be_given_randomly.Add(pObject);
-            
-            if (pObject.opposite_list != null)
-            {
-                pObject.opposite_traits = new HashSet<T>();
-                foreach (var oppositeId in pObject.opposite_list)
-                {
-                    var oppositeTrait = _assets.Find(trait => trait.id == oppositeId);
-                    if(oppositeTrait == null)
-                        oppositeTrait = _library.list.Find(trait => trait.id == oppositeId);
-                    pObject.opposite_traits.Add(oppositeTrait);
-                }
-            }
-        }   
-    }
+    // protected virtual void Finish()
+    // {
+    //     foreach (T pObject in _assets)
+    //     {
+    //         if (pObject.spawn_random_trait_allowed)
+    //             _library._pot_allowed_to_be_given_randomly.Add(pObject);
+    //         
+    //         if (pObject.opposite_list != null)
+    //         {
+    //             pObject.opposite_traits = new HashSet<T>();
+    //             foreach (var oppositeId in pObject.opposite_list)
+    //             {
+    //                 var oppositeTrait = _assets.Find(trait => trait.id == oppositeId);
+    //                 if(oppositeTrait == null)
+    //                     oppositeTrait = _library.list.Find(trait => trait.id == oppositeId);
+    //                 pObject.opposite_traits.Add(oppositeTrait);
+    //             }
+    //         }
+    //     }   
+    // }
     
     protected T Add(T trait, IEnumerable<string> actorAssets = null, IEnumerable<string> biomeAssets = null)
     {
@@ -84,8 +84,8 @@ public class BaseTraits<T, TR>
 
         }
 
-        if (trait.spawn_random_trait_allowed)
-            _library._pot_allowed_to_be_given_randomly.AddTimes(trait.spawn_random_rate, trait);
+        // if (trait.spawn_random_trait_allowed)
+        //     _library._pot_allowed_to_be_given_randomly.AddTimes(trait.spawn_random_rate, trait);
 
         trait.path_icon = "ui/Icons/"+_id+"_traits/" + trait.id;
         _assets.Add(trait);

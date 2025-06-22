@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using HarmonyLib;
 using MonoMod.Utils;
 using UnityEngine.SocialPlatforms;
 
@@ -20,8 +21,11 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
         private static readonly List<PreferenceTrait> AllTraits = new();
         public static readonly Dictionary<string, List<PreferenceTrait>> PreferenceTypes = new();
         private static readonly Dictionary<string, List<string>> MatchingSets = new();
+        private static readonly Dictionary<string, ActorTraitGroupAsset> GroupAssets = new();
         
-        public static void Init()
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(ActorTraitLibrary), nameof(ActorTraitLibrary.init))]
+        private static void Init()
         {
             var identities = List.Of("female", "male");
 
@@ -39,6 +43,18 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
             AddMatchingSets();
             
             Finish();
+            
+            Orientations.Init();
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(ActorTraitGroupLibrary), nameof(ActorTraitGroupLibrary.init))]
+        private static void FinalizeGroups()
+        {
+            foreach (var groupAsset in GroupAssets.Select(asset => asset.Value))
+            {
+                AssetManager.trait_groups.add(groupAsset);
+            }
         }
         
         // if all preferences of a preference type is added, remove them all (no reason for preferences if all are included?)
@@ -50,7 +66,7 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
                 return;
             }
 
-            AssetManager.trait_groups.add(new ActorTraitGroupAsset
+            GroupAssets.Add(type, new ActorTraitGroupAsset
             {
                 id = type,
                 name = "trait_group_"+type,
@@ -87,7 +103,6 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
                     romanticTrait.WithoutOrientationID = preference;
                     romanticTrait.path_icon = "ui/Icons/preference_traits/romantic/" + preference;
                     romanticTrait.group_id = type;
-                    romanticTrait.opposite_traits = new HashSet<ActorTrait>();
                     romanticTraits.Add(romanticTrait);
 
                     LM.AddToCore("trait_" + preference + "_romantic", 
@@ -108,7 +123,6 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
                 sexualTrait.WithoutOrientationID = preference;
                 sexualTrait.path_icon = "ui/Icons/preference_traits/sexual/" + preference;
                 sexualTrait.group_id = type;
-                sexualTrait.opposite_traits = new HashSet<ActorTrait>();
                 sexualTraits.Add(sexualTrait);
                 
                 LM.AddToCore("trait_" + preference + "_sexual", 
@@ -128,7 +142,7 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
         }
         private static void Finish()
         {
-            AssetManager.trait_groups.add(new ActorTraitGroupAsset
+            GroupAssets.Add("dislikes", new ActorTraitGroupAsset
             {
                 id = "dislikes",
                 name = "trait_group_dislikes",
@@ -141,7 +155,6 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
             dislikeSex.IsSexual = true;
             dislikeSex.base_stats = new();
             dislikeSex.base_stats["multiplier_intimacy_happiness"] = 0.5f;
-            dislikeSex.opposite_traits = new HashSet<ActorTrait>();
             
             var dislikeRomance = CreateBaseTrait();
             dislikeRomance.id = "dislike_romance";
@@ -149,7 +162,6 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
             dislikeRomance.path_icon = "ui/Icons/orientations/aromantic";
             dislikeRomance.base_stats = new();
             dislikeRomance.base_stats["multiplier_intimacy_happiness"] = 0.5f;
-            dislikeRomance.opposite_traits = new HashSet<ActorTrait>();
 
             AllTraits.Add(dislikeRomance);
             AllTraits.Add(dislikeSex);
@@ -162,13 +174,13 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
                 {
                     if (trait.IsSexual)
                     {
-                        dislikeSex.opposite_traits.Add(trait);
-                        trait.opposite_traits.Add(dislikeSex);
+                        dislikeSex.addOpposite(trait.id);
+                        trait.addOpposite(dislikeSex.id);
                     }
                     else
                     {
-                        dislikeRomance.opposite_traits.Add(trait);
-                        trait.opposite_traits.Add(dislikeRomance);
+                        dislikeRomance.addOpposite(trait.id);
+                        trait.addOpposite(dislikeRomance.id);
                     }
                 }
             }

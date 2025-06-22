@@ -96,7 +96,6 @@ namespace Topic_of_Love.Mian.CustomAssets.Traits
                 can_be_removed = true,
                 can_be_given = true
             }, List.Of("elf"), List.Of("biome_maple"));
-            Finish();
         }
     }
 }

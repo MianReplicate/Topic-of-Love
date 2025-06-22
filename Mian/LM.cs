@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using HarmonyLib;
 using Newtonsoft.Json;
 
@@ -9,19 +10,17 @@ namespace Topic_of_Love.Mian;
 // Credits to NML for their MIT License! :heart:
 public class LM
 {
-    private static Dictionary<string, Dictionary<string, string>> _locales = new()
-    {
-        ["en"]={}
-    };
+    private static Dictionary<string, Dictionary<string, string>> _locales = new();
 
     public static void LoadLocales()
     {
-        var localeFiles = Directory.GetFiles(TopicOfLove.GetModDirectory() + "\\Locales");
+        var assembly = Assembly.GetExecutingAssembly();
+        var localePath = TopicOfLove.GetModPath() + ".Locales.";
 
-        foreach (var langPath in localeFiles)
+        foreach (var langPath in assembly.GetManifestResourceNames().Where(name => name.StartsWith(localePath)))
         {
-            var language = Path.GetFileNameWithoutExtension(langPath);
-            var locale = JsonConvert.DeserializeObject<Dictionary<string, string>>(new StreamReader(langPath).ReadToEnd());
+            var language = Path.GetFileNameWithoutExtension(langPath.Substring(localePath.Length));
+            var locale = JsonConvert.DeserializeObject<Dictionary<string, string>>(new StreamReader(assembly.GetManifestResourceStream(langPath)).ReadToEnd());
             _locales.Add(language, locale);
         }
         ApplyLocale();
@@ -53,9 +52,18 @@ public class LM
     // adds to default
     public static void AddToCore(string key, string value)
     {
+        if(!_locales.ContainsKey("en"))
+            _locales.Add("en", new Dictionary<string, string>());
         _locales["en"][key] = value;
         if(!LocalizedTextManager.instance._localized_text.ContainsKey(key))
             LocalizedTextManager.instance._localized_text[key] = value;
+    }
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(LocalizedTextManager), nameof(LocalizedTextManager.init))]
+    private static void Init()
+    {
+        LoadLocales();
     }
     
     [HarmonyPostfix]

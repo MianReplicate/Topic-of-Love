@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using BepInEx;
 using BepInEx.Logging;
 using db;
@@ -23,9 +24,9 @@ namespace Topic_of_Love.Mian
         public static TopicOfLove Instance;
         public new static ManualLogSource Logger;
 
-        public static string GetModDirectory()
+        public static string GetModPath()
         {
-            return Environment.CurrentDirectory;
+            return "Topic_of_Love";
         }
         
         private void Awake()
@@ -34,33 +35,34 @@ namespace Topic_of_Love.Mian
             Logger = base.Logger;
             HarmonyFileLog.Enabled = true;
             
-            var harmony = new Harmony("netdot.mian.topicofloving");
-            harmony.PatchAll();
-            
             // Initialize your mod.
             // Methods are called in the order: OnLoad -> Awake -> OnEnable -> Start -> Update
             TolUtil.LogInfo("Making people more loveable!");
             
             TolConfig.Init(this); // start first
-            new ActorTraits().Init();
-            new CultureTraits().Init();
-            new SubspeciesTraits().Init();
-            StatusEffects.Init();
-            Happiness.Init();
-            CommunicationTopics.Init();
-            ActorBehaviorTasks.Init();
-            Decisions.Init();
-            Opinions.Init();
-            BaseStatAssets.Init(); // make sure this loads before preferences
-            WorldLawAssets.Init();
-            StatisticAssets.Init();
-            HistoryDataAssets.Init();
-            GodPowers.Init();
-            TabsAndButtons.Init();
-            Orientations.Init();
-            Preferences.Init();
             
-            LM.LoadLocales(); // run last
+            var harmony = new Harmony("netdot.mian.topicofloving");
+            harmony.PatchAll();
+
+            // new ActorTraits().Init();
+            // new CultureTraits().Init();
+            // new SubspeciesTraits().Init();
+            // StatusEffects.Init();
+            // Happiness.Init();
+            // CommunicationTopics.Init();
+            // ActorBehaviorTasks.Init();
+            // Decisions.Init();
+            // Opinions.Init();
+            // BaseStatAssets.Init(); // make sure this loads before preferences
+            // WorldLawAssets.Init();
+            // StatisticAssets.Init();
+            // HistoryDataAssets.Init();
+            // GodPowers.Init();
+            // TabsAndButtons.Init();
+            // Orientations.Init();
+            // Preferences.Init();
+            
+            // LM.LoadLocales(); // run last
             Debug.Log("working");
         }
     }

@@ -22,6 +22,7 @@
         <OutputType>Library</OutputType>
     </PropertyGroup>
     <ItemGroup>
+        <Compile Include="Mian\Patches\ActorAssetLibraryPatch.cs" />
         <Compile Include="Mian\TolConfig.cs" />
         <Compile Include="Mian\CustomAssets\AI\ActorBehaviorTasks.cs" />
         <Compile Include="Mian\CustomAssets\AI\CustomBehaviors\ivf\BehCheckForSexualIvf.cs" />

@@ -1,13 +1,23 @@
 ﻿using System.Collections.Generic;
+using HarmonyLib;
+using UnityEngine;
 
 namespace Topic_of_Love.Mian.CustomAssets.Traits
 {
-    public class ActorTraits : BaseTraits<ActorTrait, ActorTraitLibrary>
+    public class ActorTraits
     {
-        public void Init()
+        public static ActorTrait Add(ActorTrait trait)
         {
-            Init("actor", false);
-            
+            trait.path_icon = "ui/Icons/actor_traits/" + trait.id;
+            AssetManager.traits.add(trait);
+            return trait;
+        }
+        
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(ActorTraitLibrary), nameof(ActorTraitLibrary.init))]
+        public static void Init()
+        {
+            Debug.Log("ADDING TRAITS");
             Add(new ActorTrait
             {
                 id = "unfluid",
@@ -40,7 +50,6 @@ namespace Topic_of_Love.Mian.CustomAssets.Traits
                 unlocked_with_achievement = false,
                 rarity = Rarity.R1_Rare,
                 needs_to_be_explored = true,
-                opposite_traits = new HashSet<ActorTrait>()
             }).addOpposite("unfaithful");
             Add(new ActorTrait
             {
@@ -53,21 +62,6 @@ namespace Topic_of_Love.Mian.CustomAssets.Traits
                 rarity = Rarity.R1_Rare,
                 needs_to_be_explored = true,
             }).addOpposite("faithful");
-            Finish();
-        }
-
-        protected override void Finish()
-        {
-            foreach (var trait in _assets)
-            {
-                for (int index = 0; index < trait.rate_birth; ++index)
-                    AssetManager.traits.pot_traits_birth.Add(trait);
-                for (int index = 0; index < trait.rate_acquire_grow_up; ++index)
-                    AssetManager.traits.pot_traits_growup.Add(trait);
-                if (trait.combat)
-                    AssetManager.traits.pot_traits_combat.Add(trait);   
-            }
-            base.Finish();
         }
     }
 }
