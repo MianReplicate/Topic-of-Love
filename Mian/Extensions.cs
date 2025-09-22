@@ -4,6 +4,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using NCMS.Extensions;
 using Topic_of_Love.Mian.CustomAssets.Custom;
+using UnityEngine.Pool;
 
 namespace Topic_of_Love.Mian;
 
@@ -447,33 +448,33 @@ public static class Extensions
     where TMetaObject : CoreSystemObject<TData>
     where TData : BaseSystemData
     {
-        // Dictionary<Orientation, int> dictionary = UnsafeCollectionPool<Dictionary<Orientation, int>, KeyValuePair<Orientation, int>>.Get();
-        // var unitsCount = pListWithUnits.Count;
-        // foreach (Actor pListWithUnit in pListWithUnits)
-        // {
-        //     var orientation = Orientations.GetOrientationForActorBasedOnCriteria(pListWithUnit, sexual);
-        //     if (!dictionary.ContainsKey(orientation))
-        //         dictionary.Add(orientation, 0);
-        //     dictionary[orientation]++;
-        // }
-        // foreach (KeyValuePair<Orientation, int> keyValuePair in dictionary.OrderByDescending((kv => kv.Value)))
-        // {
-        //     var key = keyValuePair.Key;
-        //     int num2 = keyValuePair.Value;
-        //     float pFloat = unitsCount > 0 ? (float) ((double) num2 / unitsCount * 100.0) : 0.0f;
-        //     if (unitsCount == num2)
-        //         pFloat = 100f;
-        //     string pValue = $"[{num2}] {pFloat.ToText()}%";
-        //     instance.showStatRow(
-        //         sexual ? key.SexualPathLocale : key.RomanticPathLocale, 
-        //         pValue, 
-        //         key.HexCode, 
-        //         MetaType.None, 
-        //         -1, 
-        //         true, 
-        //         key.GetPathIcon(sexual, false));
-        // }
-        // UnsafeCollectionPool<Dictionary<Orientation, int>, KeyValuePair<Orientation, int>>.Release(dictionary);
+        Dictionary<_Orientation, int> dictionary = CollectionPool<Dictionary<_Orientation, int>, KeyValuePair<_Orientation, int>>.Get();
+        var unitsCount = pListWithUnits.Count;
+        foreach (Actor pListWithUnit in pListWithUnits)
+        {
+            var orientation = Orientations.GetOrientationForActorBasedOnCriteria(pListWithUnit, sexual);
+            if (!dictionary.ContainsKey(orientation))
+                dictionary.Add(orientation, 0);
+            dictionary[orientation]++;
+        }
+        foreach (KeyValuePair<_Orientation, int> keyValuePair in dictionary.OrderByDescending((kv => kv.Value)))
+        {
+            var key = keyValuePair.Key;
+            int num2 = keyValuePair.Value;
+            float pFloat = unitsCount > 0 ? (float) ((double) num2 / unitsCount * 100.0) : 0.0f;
+            if (unitsCount == num2)
+                pFloat = 100f;
+            string pValue = $"[{num2}] {pFloat.ToText()}%";
+            instance.showStatRow(
+                sexual ? key.SexualPathLocale : key.RomanticPathLocale, 
+                pValue, 
+                key.HexCode, 
+                MetaType.None, 
+                -1, 
+                true, 
+                key.GetPathIcon(sexual, false));
+        }
+        CollectionPool<Dictionary<_Orientation, int>, KeyValuePair<_Orientation, int>>.Release(dictionary);
     }
     
     public static _Orientation getMainOrientation(this Kingdom kingdom, bool sexual)

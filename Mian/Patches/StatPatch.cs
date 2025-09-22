@@ -128,8 +128,29 @@ public class StatPatch
                     mainGroup,
                     __instance,
                     "lonely",
-                    Resources.Load<Sprite>("ui/Icons/status/broke_up"));
+                    Resources.Load<Sprite>("ui/Icons/status/okay_sex"));
                 __instance._stats_icons.Add(lonelyIcon.name, lonelyIcon);
+                
+                var brokenIcon = CreateNewIcon(
+                    mainGroup,
+                    __instance,
+                    "broke_up",
+                    Resources.Load<Sprite>("ui/Icons/status/broke_up"));
+                __instance._stats_icons.Add(brokenIcon.name, brokenIcon);
+                
+                var cheatedIcon = CreateNewIcon(
+                    mainGroup,
+                    __instance,
+                    "cheated_on",
+                    Resources.Load<Sprite>("ui/Icons/status/cheated_on"));
+                __instance._stats_icons.Add(cheatedIcon.name, cheatedIcon);
+                
+                var adoptedIcon = CreateNewIcon(
+                    mainGroup,
+                    __instance,
+                    "adopted_baby",
+                    Resources.Load<Sprite>("ui/Icons/status/adopted_baby"));
+                __instance._stats_icons.Add(adoptedIcon.name, adoptedIcon);
             }
             
             // Orientation.RegisteredOrientations.Values.ForEach(orientation =>
@@ -140,6 +161,9 @@ public class StatPatch
             // });
             
             __instance.setIconValue("lonely", pMetaObject.countLonely());
+            __instance.setIconValue("broke_up", pMetaObject.countBrokenUp());
+            __instance.setIconValue("cheated_on", pMetaObject.countCheated());
+            __instance.setIconValue("adopted_baby", pMetaObject.countAdoptedBaby());
     }
 
     private static readonly string[] ValidIconsList =
@@ -221,54 +245,54 @@ public class StatPatch
             ShowCustomIcons<City, CityData>(__instance._stats_icons, __instance.meta_object);
     }
 
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(KingdomWindow), nameof(KingdomWindow.showStatsRows))]
-    // static void ShowKingdomRows(KingdomWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
-    // }
-    //
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(CityWindow), nameof(CityWindow.showStatsRows))]
-    // static void ShowCityRows(CityWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
-    // }
-    //
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(CultureWindow), nameof(CultureWindow.showStatsRows))]
-    // static void ShowCultureRows(CultureWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
-    // }
-    //
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(AllianceWindow), nameof(AllianceWindow.showStatsRows))]
-    // static void ShowAllianceRows(AllianceWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.kingdoms_list.SelectMany(kingdom => kingdom.units).ToList(), true);
-    // }
-    //
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(SubspeciesWindow), nameof(SubspeciesWindow.showStatsRows))]
-    // static void ShowSubspeciesRows(SubspeciesWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
-    // }
-    //
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(ClanWindow), nameof(ClanWindow.showStatsRows))]
-    // static void ShowClanRows(ClanWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
-    // }
-    //
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(ReligionWindow), nameof(ReligionWindow.showStatsRows))]
-    // static void ShowReligionRows(ReligionWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
-    // }
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(KingdomWindow), nameof(KingdomWindow.showStatsRows))]
+    static void ShowKingdomRows(KingdomWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(CityWindow), nameof(CityWindow.showStatsRows))]
+    static void ShowCityRows(CityWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(CultureWindow), nameof(CultureWindow.showStatsRows))]
+    static void ShowCultureRows(CultureWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(AllianceWindow), nameof(AllianceWindow.showStatsRows))]
+    static void ShowAllianceRows(AllianceWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.kingdoms_list.SelectMany(kingdom => kingdom.units).ToList(), true);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(SubspeciesWindow), nameof(SubspeciesWindow.showStatsRows))]
+    static void ShowSubspeciesRows(SubspeciesWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(ClanWindow), nameof(ClanWindow.showStatsRows))]
+    static void ShowClanRows(ClanWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(ReligionWindow), nameof(ReligionWindow.showStatsRows))]
+    static void ShowReligionRows(ReligionWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
+    }
 
     [HarmonyPatch(typeof(UnitStatsElement))]
     public class UnitStatsElementClass
