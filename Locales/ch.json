@@ -328,9 +328,9 @@
   "romantic": "戀愛",
   "like_group": "分組",
   "intimate": "親密型",
-  "identities": "性別",
-  "expressions": "表現",
-  "genitals": "生殖",
+  "like_group_identity": "性別",
+  "like_group_expression": "表現",
+  "like_group_genital": "生殖",
   
   "tab_title_tol": "愛的主旋律",
   "tab_desc_tol": "包含所有性和戀愛取向!",
