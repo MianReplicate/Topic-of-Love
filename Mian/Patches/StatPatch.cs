@@ -244,54 +244,83 @@ public class StatPatch
         if(__instance._stats_icons != null && ValidIconsList.Contains(__instance._stats_icons.transform.name))
             ShowCustomIcons<City, CityData>(__instance._stats_icons, __instance.meta_object);
     }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(ArmyStatsElement), nameof(ArmyStatsElement.showContent))]
+    static void ShowArmyCustomStats(ArmyStatsElement __instance)
+    {
+        if(__instance._stats_icons != null && ValidIconsList.Contains(__instance._stats_icons.transform.name))
+            ShowCustomIcons<Army, ArmyData>(__instance._stats_icons, __instance.meta_object);
+    }
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(KingdomWindow), nameof(KingdomWindow.showStatsRows))]
     static void ShowKingdomRows(KingdomWindow __instance)
     {
-        __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
     }
     
     [HarmonyPostfix]
     [HarmonyPatch(typeof(CityWindow), nameof(CityWindow.showStatsRows))]
     static void ShowCityRows(CityWindow __instance)
     {
-        __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
     }
     
     [HarmonyPostfix]
     [HarmonyPatch(typeof(CultureWindow), nameof(CultureWindow.showStatsRows))]
     static void ShowCultureRows(CultureWindow __instance)
     {
-        __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
     }
     
     [HarmonyPostfix]
     [HarmonyPatch(typeof(AllianceWindow), nameof(AllianceWindow.showStatsRows))]
     static void ShowAllianceRows(AllianceWindow __instance)
     {
-        __instance.showSplitPopulationByOrientation(__instance.meta_object.kingdoms_list.SelectMany(kingdom => kingdom.units).ToList(), true);
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.kingdoms_list.SelectMany(kingdom => kingdom.units).ToList());
     }
     
     [HarmonyPostfix]
     [HarmonyPatch(typeof(SubspeciesWindow), nameof(SubspeciesWindow.showStatsRows))]
     static void ShowSubspeciesRows(SubspeciesWindow __instance)
     {
-        __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
     }
     
     [HarmonyPostfix]
     [HarmonyPatch(typeof(ClanWindow), nameof(ClanWindow.showStatsRows))]
     static void ShowClanRows(ClanWindow __instance)
     {
-        __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
     }
     
     [HarmonyPostfix]
     [HarmonyPatch(typeof(ReligionWindow), nameof(ReligionWindow.showStatsRows))]
-    static void ShowReligionRows(ReligionWindow __instance)
+    static void ShowReligionWindow(ReligionWindow __instance)
     {
-        __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(ArmyWindow), nameof(ArmyWindow.showStatsRows))]
+    static void ShowArmyRows(ArmyWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(FamilyWindow), nameof(FamilyWindow.showStatsRows))]
+    static void ShowFamilyRows(FamilyWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(LanguageWindow), nameof(LanguageWindow.showStatsRows))]
+    static void ShowLanguageRows(LanguageWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
     }
 
     [HarmonyPatch(typeof(UnitStatsElement))]

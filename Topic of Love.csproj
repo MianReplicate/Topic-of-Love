@@ -71,6 +71,7 @@
         <Compile Include="Mian\CustomAssets\Traits\CultureTraits.cs" />
         <Compile Include="Mian\CustomAssets\Traits\SubspeciesTraits.cs" />
         <Compile Include="Mian\CustomAssets\WorldLawAssets.cs" />
+        <Compile Include="Mian\CustomStatsRows.cs" />
         <Compile Include="Mian\Extensions.cs" />
         <Compile Include="Mian\Patches\ActorManagerPatch.cs" />
         <Compile Include="Mian\Patches\ActorPatch.cs" />
