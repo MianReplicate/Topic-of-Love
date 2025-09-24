@@ -395,6 +395,16 @@ namespace Topic_of_Love.Mian.CustomAssets.Custom
             LM.ApplyLocale("en");
             
             MapBox.on_world_loaded += LoadDynamicLikeAssets;
+            MapBox.on_world_loaded += () =>
+            {
+                TolUtil.LogInfo("Fixing up units...");
+                foreach (var actor in MapBox.instance.units.getSimpleList())
+                {
+                    actor.data.get("tol_edited", out bool edited);
+                    if(!edited)
+                        actor.NewLikes();
+                }
+            };
         }
 
         public static string GetHexCodeForLoveType(LoveType loveType)

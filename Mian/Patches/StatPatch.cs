@@ -170,7 +170,8 @@ public class StatPatch
     {
         "content_more_icons",
         "content_text_row_stats",
-        "content_stats"
+        "content_stats",
+        "content_overview"
     }; 
     
     [HarmonyPostfix]
@@ -254,6 +255,26 @@ public class StatPatch
     }
 
     [HarmonyPostfix]
+    [HarmonyPatch(typeof(UnitStatsElement), nameof(UnitStatsElement.showContent))]
+    static void ShowUnitCustomStats(UnitStatsElement __instance)
+    {
+        TolUtil.LogInfo("gahh");
+        foreach (var stat in Icons)
+        {
+            TolUtil.LogInfo("grr?");
+            if (stat.Valid(__instance.actor))
+            {
+                TolUtil.LogInfo("true");
+                if (__instance.actor.asset.inspect_stats)
+                {
+                    TolUtil.LogInfo("true 2.0");
+                    __instance.setIconValue(stat.Name, stat.Value(__instance.actor), pFloat : stat.IsFloat);
+                }   
+            }
+        }
+    }
+    
+    [HarmonyPostfix]
     [HarmonyPatch(typeof(KingdomWindow), nameof(KingdomWindow.showStatsRows))]
     static void ShowKingdomRows(KingdomWindow __instance)
     {
@@ -322,27 +343,7 @@ public class StatPatch
     {
         __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
     }
-
-    [HarmonyPatch(typeof(UnitStatsElement))]
-    public class UnitStatsElementClass
-    {
-        [HarmonyPostfix]
-        [HarmonyPatch(nameof(UnitStatsElement.showContent))]
-        static void ShowContent(UnitStatsElement __instance)
-        {
-            foreach (var stat in Icons)
-            {
-                if (stat.Valid(__instance.actor))
-                {
-                    if (__instance.actor.asset.inspect_stats)
-                    {
-                        __instance.setIconValue(stat.Name, stat.Value(__instance.actor), pFloat : stat.IsFloat);
-                    }   
-                }
-            }
-        }
-    }
-
+    
     private static WindowMetaTab _preferenceTabEntry;
     private static Image _imageRegenComponent;
     

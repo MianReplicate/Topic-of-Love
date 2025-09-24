@@ -39,8 +39,8 @@ public class BabyMakerPatch
             ActorManagerPatch.NewUnit(__result); // generate preferences
         }
         static bool Prefix(
-            Actor pParent1,
-            Actor pParent2,
+            Actor pregnantActor,
+            Actor dickActor,
             ActorSex pForcedSexType,
             bool pCloneTraits,
             int pMutationRate,
@@ -50,21 +50,21 @@ public class BabyMakerPatch
             ref Actor __result
             )
         {
-            List<Actor> parents = new List<Actor>{pParent1};
-            if(pParent2 != null)
-                parents.Add(pParent2);
+            List<Actor> birthers = new List<Actor>{pregnantActor};
+            if(dickActor != null)
+                birthers.Add(dickActor);
             
-            City pCity = pParent1.city ?? pParent2?.city;
+            City pCity = pregnantActor.city ?? dickActor?.city;
             
             if (pCity != null)
                 --pCity.status.housing_free;
 
-            Actor dominantParent = TolUtil.EnsurePopulationFromParent(parents);
+            Actor dominantParent = TolUtil.EnsurePopulationFromParent(birthers);
             if (dominantParent == null) 
                 // there seems to be a bug in the game that allows reproduction strategies that aren't sexual to PRODUCE beyond the harmony traits cap. probably because they dont check for populations there lol
-                dominantParent = pParent1;
+                dominantParent = pregnantActor;
             
-            Actor nonDominantParent = dominantParent != pParent1 ? pParent1 : pParent2;
+            Actor nonDominantParent = dominantParent != pregnantActor ? pregnantActor : dickActor;
             ActorAsset asset = dominantParent.asset;
             
             ActorData pData = new ActorData();
@@ -90,10 +90,10 @@ public class BabyMakerPatch
                     : pTile;
                 Actor actorFromData = World.world.units.createBabyActorFromData(pData, pTile1, pCity);
 
-                pParent1.data.get("familyParentA", out var familyParentAid, 0L);
-                pParent1.data.get("familyParentB", out var familyParentBid, 0L);
+                pregnantActor.data.get("familyParentA", out var familyParentAid, 0L);
+                // pParent1.data.get("familyParentB", out var familyParentBid, 0L);
                 var familyParentA = World.world.units.get(familyParentAid);
-                var familyParentB = World.world.units.get(familyParentBid);
+                var familyParentB = familyParentA?.lover;
 
                 if (familyParentA != null)
                 {
@@ -175,12 +175,12 @@ public class BabyMakerPatch
                     ActorSex actorSex = ActorSex.None;
 
                     // confirm it was sexual
-                    if (pParent1.hasSubspeciesTrait("reproduction_same_sex") && pParent2 != null)
+                    if (pregnantActor.hasSubspeciesTrait("reproduction_same_sex") && dickActor != null)
                     {
-                        actorSex = pParent1.data.sex;
-                    } else if (pParent2 != null && pParent2.hasSubspeciesTrait("reproduction_same_sex"))
+                        actorSex = pregnantActor.data.sex;
+                    } else if (dickActor != null && dickActor.hasSubspeciesTrait("reproduction_same_sex"))
                     {
-                        actorSex = pParent2.data.sex;
+                        actorSex = dickActor.data.sex;
                     }
                     else
                     {
@@ -193,6 +193,7 @@ public class BabyMakerPatch
                                     ? ActorSex.Female
                                     : ActorSex.Male);   
                     }
+                    
                     if (actorSex != ActorSex.None)
                         actorFromData.data.sex = actorSex;
                     else
@@ -208,8 +209,8 @@ public class BabyMakerPatch
                 
                 // LogService.LogInfo($"[{__result.getName()}]: Baby is of {__result.subspecies.name} and comes from {__result.asset.getTranslatedName()}");
                 
-                pParent1.data.removeLong("familyParentA");
-                pParent1.data.removeLong("familyParentB");
+                pregnantActor.data.removeLong("familyParentA");
+                pregnantActor.data.removeLong("familyParentB");
                 return false;
             }
         }

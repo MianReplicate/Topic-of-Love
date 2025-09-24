@@ -213,21 +213,22 @@ public static class Extensions
 
     public static void NewLikes(this Actor actor)
     {
-        if (actor != null && CapableOfLove(actor))
+        if (actor == null) return;
+        actor.data.set("tol_edited", true);
+        if (!CapableOfLove(actor)) return;
+        
+        var oldPreferences = actor.GetActorLikes();
+        foreach (var preference in oldPreferences)
         {
-            var oldPreferences = actor.GetActorLikes();
-            foreach (var preference in oldPreferences)
-            {
-                actor.data.removeBool(preference.IDWithLoveType);
-            }
-                
-            var preferences =  LikesManager.GetRandomLikes(actor);
-            foreach (var preference in preferences)
-            {
-                actor.data.set(preference.IDWithLoveType, true);
-            }
-            Orientations.RollOrientationLabel(actor);
+            actor.data.removeBool(preference.IDWithLoveType);
         }
+                
+        var preferences =  LikesManager.GetRandomLikes(actor);
+        foreach (var preference in preferences)
+        {
+            actor.data.set(preference.IDWithLoveType, true);
+        }
+        Orientations.RollOrientationLabel(actor);
     }
     public static bool WillDoIntimacy(this Actor pActor, Actor pTarget, SexType sexReason=SexType.None, bool isInit=false)
         {
