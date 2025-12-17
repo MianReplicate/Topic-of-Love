@@ -39,8 +39,8 @@ public class BabyMakerPatch
             ActorManagerPatch.NewUnit(__result); // generate preferences
         }
         static bool Prefix(
-            Actor pregnantActor,
-            Actor dickActor,
+            Actor pParent1,
+            Actor pParent2,
             ActorSex pForcedSexType,
             bool pCloneTraits,
             int pMutationRate,
@@ -50,6 +50,8 @@ public class BabyMakerPatch
             ref Actor __result
             )
         {
+            var pregnantActor = pParent1;
+            var dickActor = pParent2;
             List<Actor> birthers = new List<Actor>{pregnantActor};
             if(dickActor != null)
                 birthers.Add(dickActor);

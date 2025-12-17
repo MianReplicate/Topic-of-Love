@@ -4,6 +4,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using NCMS.Extensions;
 using Topic_of_Love.Mian.CustomAssets.Custom;
+using Topic_of_Love.UI.Mian;
 using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.UI;
@@ -452,86 +453,66 @@ public static class Extensions
     where TMetaObject : CoreSystemObject<TData>
     where TData : BaseSystemData
     {
-        var contentOrientations = instance.transform.FindRecursive("content_orientations");
-        CustomStatsRows stats = null;
-        if (contentOrientations == null)
-        {
-            var mainContentWindow = instance.transform.FindRecursive("Content");
-            var template =
-                GameObject.Find(
-                    "Canvas Container Main/Canvas - Windows/windows/kingdom/Background/Scroll View/Viewport/Content/content_metas");
-            
-            var orientationsObj = Object.Instantiate(template, mainContentWindow.transform);
-            contentOrientations = orientationsObj.transform;
-            contentOrientations.name = "content_orientations";
-            contentOrientations.transform.GetChild(0).GetComponent<LocalizedText>().setKeyAndUpdate("orientations");
-            // window.GetChild(0).GetComponent<Text>().text = "Orientations";
-            var container = contentOrientations.GetChild(1);
-            Object.Destroy(container.GetComponent<StatsMetaRowsContainer>());
-            // for (int i = container.transform.childCount - 1; i >= 0; i--)
-            // {
-            //     Object.Destroy(container.GetChild(i));
-            // }
-            contentOrientations.SetSiblingIndex(50);
-        }
-        stats = contentOrientations.GetChild(1).AddComponent<CustomStatsRows>();
-        contentOrientations.gameObject.SetActive(true);
-            
-        Dictionary<_Orientation, int> dictionary = CollectionPool<Dictionary<_Orientation, int>, KeyValuePair<_Orientation, int>>.Get();
-        var unitsCount = pListWithUnits.Count;
-        foreach (Actor pListWithUnit in pListWithUnits)
-        {
-            var orientation = Orientations.GetOrientationForActorBasedOnCriteria(pListWithUnit, true);
-            if (!dictionary.ContainsKey(orientation))
-                dictionary.Add(orientation, 0);
-            dictionary[orientation]++;
-        }
-        foreach (KeyValuePair<_Orientation, int> keyValuePair in dictionary.OrderByDescending((kv => kv.Value)))
-        {
-            var key = keyValuePair.Key;
-            int num2 = keyValuePair.Value;
-            float pFloat = unitsCount > 0 ? (float) ((double) num2 / unitsCount * 100.0) : 0.0f;
-            if (unitsCount == num2)
-                pFloat = 100f;
-            string pValue = $"[{num2}] {pFloat.ToText()}%";
-            stats.showStatRow(
-                key.SexualPathLocale, 
-                pValue, 
-                key.HexCode, 
-                MetaType.None, 
-                -1, 
-                true, 
-                key.GetPathIcon(true, false));
-        }
-        CollectionPool<Dictionary<_Orientation, int>, KeyValuePair<_Orientation, int>>.Release(dictionary);
-
-        foreach (Actor pListWithUnit in pListWithUnits)
-        {
-            var orientation = Orientations.GetOrientationForActorBasedOnCriteria(pListWithUnit, false);
-            if (!dictionary.ContainsKey(orientation))
-                dictionary.Add(orientation, 0);
-            dictionary[orientation]++;
-        }
-        foreach (KeyValuePair<_Orientation, int> keyValuePair in dictionary.OrderByDescending((kv => kv.Value)))
-        {
-            var key = keyValuePair.Key;
-            int num2 = keyValuePair.Value;
-            float pFloat = unitsCount > 0 ? (float) ((double) num2 / unitsCount * 100.0) : 0.0f;
-            if (unitsCount == num2)
-                pFloat = 100f;
-            string pValue = $"[{num2}] {pFloat.ToText()}%";
-            stats.showStatRow(
-                key.RomanticPathLocale, 
-                pValue, 
-                key.HexCode, 
-                MetaType.None, 
-                -1, 
-                true, 
-                key.GetPathIcon(false, false));
-        }
-        CollectionPool<Dictionary<_Orientation, int>, KeyValuePair<_Orientation, int>>.Release(dictionary);
-        
-        stats.beginShow();
+        // CustomStatWindows.Init();
+        //
+        // var contentOrientations = instance.transform.FindRecursive("content_orientations");
+        // CustomStatsRows stats = contentOrientations.GetChild(1).GetComponent<CustomStatsRows>();
+        //     
+        // Dictionary<_Orientation, int> dictionary = CollectionPool<Dictionary<_Orientation, int>, KeyValuePair<_Orientation, int>>.Get();
+        // var unitsCount = pListWithUnits.Count;
+        // foreach (Actor pListWithUnit in pListWithUnits)
+        // {
+        //     var orientation = Orientations.GetOrientationForActorBasedOnCriteria(pListWithUnit, true);
+        //     if (!dictionary.ContainsKey(orientation))
+        //         dictionary.Add(orientation, 0);
+        //     dictionary[orientation]++;
+        // }
+        // foreach (KeyValuePair<_Orientation, int> keyValuePair in dictionary.OrderByDescending((kv => kv.Value)))
+        // {
+        //     var key = keyValuePair.Key;
+        //     int num2 = keyValuePair.Value;
+        //     float pFloat = unitsCount > 0 ? (float) ((double) num2 / unitsCount * 100.0) : 0.0f;
+        //     if (unitsCount == num2)
+        //         pFloat = 100f;
+        //     string pValue = $"[{num2}] {pFloat.ToText()}%";
+        //     stats.showStatRow(
+        //         key.SexualPathLocale, 
+        //         pValue, 
+        //         key.HexCode, 
+        //         MetaType.None, 
+        //         -1, 
+        //         true, 
+        //         key.GetPathIcon(true, false));
+        // }
+        // CollectionPool<Dictionary<_Orientation, int>, KeyValuePair<_Orientation, int>>.Release(dictionary);
+        //
+        // foreach (Actor pListWithUnit in pListWithUnits)
+        // {
+        //     var orientation = Orientations.GetOrientationForActorBasedOnCriteria(pListWithUnit, false);
+        //     if (!dictionary.ContainsKey(orientation))
+        //         dictionary.Add(orientation, 0);
+        //     dictionary[orientation]++;
+        // }
+        // foreach (KeyValuePair<_Orientation, int> keyValuePair in dictionary.OrderByDescending((kv => kv.Value)))
+        // {
+        //     var key = keyValuePair.Key;
+        //     int num2 = keyValuePair.Value;
+        //     float pFloat = unitsCount > 0 ? (float) ((double) num2 / unitsCount * 100.0) : 0.0f;
+        //     if (unitsCount == num2)
+        //         pFloat = 100f;
+        //     string pValue = $"[{num2}] {pFloat.ToText()}%";
+        //     stats.showStatRow(
+        //         key.RomanticPathLocale, 
+        //         pValue, 
+        //         key.HexCode, 
+        //         MetaType.None, 
+        //         -1, 
+        //         true, 
+        //         key.GetPathIcon(false, false));
+        // }
+        // CollectionPool<Dictionary<_Orientation, int>, KeyValuePair<_Orientation, int>>.Release(dictionary);
+        //
+        // stats.beginShow();
     }
     
     public static _Orientation getMainOrientation(this Kingdom kingdom, bool sexual)

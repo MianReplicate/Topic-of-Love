@@ -37,7 +37,7 @@ public class StatPatch
             Value=value;
         }
     }
-    private static readonly Stat<int>[] Icons = {
+    private static readonly Stat<int>[] UnitIcons = {
         new ("intimacy_happiness", Extensions.CapableOfLove, actor => (int) actor.stats["intimacy_happiness"], "ui/Icons/god_powers/force_lover"),
     };
     private static readonly Stat<Dictionary<string, string>>[] Stats = {
@@ -258,16 +258,12 @@ public class StatPatch
     [HarmonyPatch(typeof(UnitStatsElement), nameof(UnitStatsElement.showContent))]
     static void ShowUnitCustomStats(UnitStatsElement __instance)
     {
-        TolUtil.LogInfo("gahh");
-        foreach (var stat in Icons)
+        foreach (var stat in UnitIcons)
         {
-            TolUtil.LogInfo("grr?");
             if (stat.Valid(__instance.actor))
             {
-                TolUtil.LogInfo("true");
                 if (__instance.actor.asset.inspect_stats)
                 {
-                    TolUtil.LogInfo("true 2.0");
                     __instance.setIconValue(stat.Name, stat.Value(__instance.actor), pFloat : stat.IsFloat);
                 }   
             }
@@ -536,7 +532,7 @@ public class StatPatch
                     GameObject.DestroyImmediate(child.gameObject);
             }
     
-            foreach (var iconData in Icons)
+            foreach (var iconData in UnitIcons)
             {
                 var baseIcon = GameObject.Instantiate(iconTemplate, iconGroup);
                 var icon = baseIcon.GetComponent<StatsIcon>();

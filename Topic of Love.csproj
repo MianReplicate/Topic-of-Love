@@ -71,7 +71,6 @@
         <Compile Include="Mian\CustomAssets\Traits\CultureTraits.cs" />
         <Compile Include="Mian\CustomAssets\Traits\SubspeciesTraits.cs" />
         <Compile Include="Mian\CustomAssets\WorldLawAssets.cs" />
-        <Compile Include="Mian\CustomStatsRows.cs" />
         <Compile Include="Mian\Extensions.cs" />
         <Compile Include="Mian\Patches\ActorManagerPatch.cs" />
         <Compile Include="Mian\Patches\ActorPatch.cs" />
@@ -96,6 +95,8 @@
         <Compile Include="Mian\Patches\StatPatch.cs" />
         <Compile Include="Mian\TopicOfLove.cs" />
         <Compile Include="Mian\TolUtil.cs" />
+        <Compile Include="Mian\UI\CustomStatWindows.cs" />
+        <Compile Include="Mian\UI\CustomStatsRows.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="default_config.json" />
