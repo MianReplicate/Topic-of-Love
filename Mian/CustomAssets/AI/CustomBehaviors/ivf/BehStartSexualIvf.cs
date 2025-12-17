@@ -34,10 +34,10 @@ public class BehStartSexualIvf : BehaviourActionActor
             var nonPregnantActor = pregnantActor == pActor ? _target : pActor;
 
             pregnantActor.data.set("familyParentA", pActor.getID());
-            if (pActor.hasLover())
-            {
-                pregnantActor.data.set("familyParentB", pActor.lover.getID());
-            }
+            // if (pActor.hasLover())
+            // {
+            //     pregnantActor.data.set("familyParentB", pActor.lover.getID());
+            // }
             
             (new BehCheckForBabiesFromSexualReproduction()).checkFamily(pActor, pActor.lover);
 

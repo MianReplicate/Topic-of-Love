@@ -37,7 +37,7 @@ public class StatPatch
             Value=value;
         }
     }
-    private static readonly Stat<int>[] Icons = {
+    private static readonly Stat<int>[] UnitIcons = {
         new ("intimacy_happiness", Extensions.CapableOfLove, actor => (int) actor.stats["intimacy_happiness"], "ui/Icons/god_powers/force_lover"),
     };
     private static readonly Stat<Dictionary<string, string>>[] Stats = {
@@ -128,8 +128,29 @@ public class StatPatch
                     mainGroup,
                     __instance,
                     "lonely",
-                    Resources.Load<Sprite>("ui/Icons/status/broke_up"));
+                    Resources.Load<Sprite>("ui/Icons/status/okay_sex"));
                 __instance._stats_icons.Add(lonelyIcon.name, lonelyIcon);
+                
+                var brokenIcon = CreateNewIcon(
+                    mainGroup,
+                    __instance,
+                    "broke_up",
+                    Resources.Load<Sprite>("ui/Icons/status/broke_up"));
+                __instance._stats_icons.Add(brokenIcon.name, brokenIcon);
+                
+                var cheatedIcon = CreateNewIcon(
+                    mainGroup,
+                    __instance,
+                    "cheated_on",
+                    Resources.Load<Sprite>("ui/Icons/status/cheated_on"));
+                __instance._stats_icons.Add(cheatedIcon.name, cheatedIcon);
+                
+                var adoptedIcon = CreateNewIcon(
+                    mainGroup,
+                    __instance,
+                    "adopted_baby",
+                    Resources.Load<Sprite>("ui/Icons/status/adopted_baby"));
+                __instance._stats_icons.Add(adoptedIcon.name, adoptedIcon);
             }
             
             // Orientation.RegisteredOrientations.Values.ForEach(orientation =>
@@ -140,13 +161,17 @@ public class StatPatch
             // });
             
             __instance.setIconValue("lonely", pMetaObject.countLonely());
+            __instance.setIconValue("broke_up", pMetaObject.countBrokenUp());
+            __instance.setIconValue("cheated_on", pMetaObject.countCheated());
+            __instance.setIconValue("adopted_baby", pMetaObject.countAdoptedBaby());
     }
 
     private static readonly string[] ValidIconsList =
     {
         "content_more_icons",
         "content_text_row_stats",
-        "content_stats"
+        "content_stats",
+        "content_overview"
     }; 
     
     [HarmonyPostfix]
@@ -220,76 +245,101 @@ public class StatPatch
         if(__instance._stats_icons != null && ValidIconsList.Contains(__instance._stats_icons.transform.name))
             ShowCustomIcons<City, CityData>(__instance._stats_icons, __instance.meta_object);
     }
-
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(KingdomWindow), nameof(KingdomWindow.showStatsRows))]
-    // static void ShowKingdomRows(KingdomWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
-    // }
-    //
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(CityWindow), nameof(CityWindow.showStatsRows))]
-    // static void ShowCityRows(CityWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
-    // }
-    //
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(CultureWindow), nameof(CultureWindow.showStatsRows))]
-    // static void ShowCultureRows(CultureWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
-    // }
-    //
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(AllianceWindow), nameof(AllianceWindow.showStatsRows))]
-    // static void ShowAllianceRows(AllianceWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.kingdoms_list.SelectMany(kingdom => kingdom.units).ToList(), true);
-    // }
-    //
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(SubspeciesWindow), nameof(SubspeciesWindow.showStatsRows))]
-    // static void ShowSubspeciesRows(SubspeciesWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
-    // }
-    //
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(ClanWindow), nameof(ClanWindow.showStatsRows))]
-    // static void ShowClanRows(ClanWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
-    // }
-    //
-    // [HarmonyPostfix]
-    // [HarmonyPatch(typeof(ReligionWindow), nameof(ReligionWindow.showStatsRows))]
-    // static void ShowReligionRows(ReligionWindow __instance)
-    // {
-    //     __instance.showSplitPopulationByOrientation(__instance.meta_object.units, true);
-    // }
-
-    [HarmonyPatch(typeof(UnitStatsElement))]
-    public class UnitStatsElementClass
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(ArmyStatsElement), nameof(ArmyStatsElement.showContent))]
+    static void ShowArmyCustomStats(ArmyStatsElement __instance)
     {
-        [HarmonyPostfix]
-        [HarmonyPatch(nameof(UnitStatsElement.showContent))]
-        static void ShowContent(UnitStatsElement __instance)
+        if(__instance._stats_icons != null && ValidIconsList.Contains(__instance._stats_icons.transform.name))
+            ShowCustomIcons<Army, ArmyData>(__instance._stats_icons, __instance.meta_object);
+    }
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(UnitStatsElement), nameof(UnitStatsElement.showContent))]
+    static void ShowUnitCustomStats(UnitStatsElement __instance)
+    {
+        foreach (var stat in UnitIcons)
         {
-            foreach (var stat in Icons)
+            if (stat.Valid(__instance.actor))
             {
-                if (stat.Valid(__instance.actor))
+                if (__instance.actor.asset.inspect_stats)
                 {
-                    if (__instance.actor.asset.inspect_stats)
-                    {
-                        __instance.setIconValue(stat.Name, stat.Value(__instance.actor), pFloat : stat.IsFloat);
-                    }   
-                }
+                    __instance.setIconValue(stat.Name, stat.Value(__instance.actor), pFloat : stat.IsFloat);
+                }   
             }
         }
     }
-
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(KingdomWindow), nameof(KingdomWindow.showStatsRows))]
+    static void ShowKingdomRows(KingdomWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(CityWindow), nameof(CityWindow.showStatsRows))]
+    static void ShowCityRows(CityWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(CultureWindow), nameof(CultureWindow.showStatsRows))]
+    static void ShowCultureRows(CultureWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(AllianceWindow), nameof(AllianceWindow.showStatsRows))]
+    static void ShowAllianceRows(AllianceWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.kingdoms_list.SelectMany(kingdom => kingdom.units).ToList());
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(SubspeciesWindow), nameof(SubspeciesWindow.showStatsRows))]
+    static void ShowSubspeciesRows(SubspeciesWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(ClanWindow), nameof(ClanWindow.showStatsRows))]
+    static void ShowClanRows(ClanWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(ReligionWindow), nameof(ReligionWindow.showStatsRows))]
+    static void ShowReligionWindow(ReligionWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(ArmyWindow), nameof(ArmyWindow.showStatsRows))]
+    static void ShowArmyRows(ArmyWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(FamilyWindow), nameof(FamilyWindow.showStatsRows))]
+    static void ShowFamilyRows(FamilyWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
+    }
+    
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(LanguageWindow), nameof(LanguageWindow.showStatsRows))]
+    static void ShowLanguageRows(LanguageWindow __instance)
+    {
+        __instance.showSplitPopulationByOrientation(__instance.meta_object.units);
+    }
+    
     private static WindowMetaTab _preferenceTabEntry;
     private static Image _imageRegenComponent;
     
@@ -482,7 +532,7 @@ public class StatPatch
                     GameObject.DestroyImmediate(child.gameObject);
             }
     
-            foreach (var iconData in Icons)
+            foreach (var iconData in UnitIcons)
             {
                 var baseIcon = GameObject.Instantiate(iconTemplate, iconGroup);
                 var icon = baseIcon.GetComponent<StatsIcon>();

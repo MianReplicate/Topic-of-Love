@@ -7,7 +7,7 @@ namespace Topic_of_Love.Mian.Patches;
 [HarmonyPatch]
 public class BehSexualReproductionPatches
 {
-    private static bool IsValid(Actor pActor, Actor pTarget)
+    private static bool CanReproduceTogether(Actor pActor, Actor pTarget)
     {
         return ((pActor.isSapient() && pTarget.isSapient()) || pTarget.isSameSpecies(pActor)) && pTarget.canBreed() && pTarget.canBreed() && !BabyHelper.isMetaLimitsReached(pTarget) && pActor.CanReproduce(pTarget) && (!pTarget.hasTask() || (pTarget.hasTask() && pTarget.ai.task.cancellable_by_reproduction));
     }
@@ -17,7 +17,7 @@ public class BehSexualReproductionPatches
         
         foreach (var pTarget in Finder.getUnitsFromChunk(pActor.current_tile, 2))
         {
-            if (pTarget != pActor && (!sexualMatch || pActor.AreCompatible(pTarget, true)) && IsValid(pActor, pTarget) && pTarget.CanHaveIntimacyWithoutRepercussions(SexType.Reproduction))
+            if (pTarget != pActor && (!sexualMatch || pActor.AreCompatible(pTarget, true)) && CanReproduceTogether(pActor, pTarget) && pTarget.CanHaveIntimacyWithoutRepercussions(SexType.Reproduction))
             {
                 toReturn = pTarget;
                 break;
@@ -34,7 +34,7 @@ public class BehSexualReproductionPatches
 
         if (pActor.IsDyingOut())
         {
-            if (pActor.hasLover() && IsValid(pActor, pActor.lover))
+            if (pActor.hasLover() && CanReproduceTogether(pActor, pActor.lover))
             {
                 actorToDoSex = pActor.lover;
             }
@@ -45,7 +45,7 @@ public class BehSexualReproductionPatches
         }
         else
         {
-            if (pActor.hasLover() && pActor.AreCompatible(pActor.lover, true) && IsValid(pActor, pActor.lover))
+            if (pActor.hasLover() && pActor.AreCompatible(pActor.lover, true) && CanReproduceTogether(pActor, pActor.lover))
             {
                 actorToDoSex = pActor.lover;
             }

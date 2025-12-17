@@ -95,6 +95,8 @@
         <Compile Include="Mian\Patches\StatPatch.cs" />
         <Compile Include="Mian\TopicOfLove.cs" />
         <Compile Include="Mian\TolUtil.cs" />
+        <Compile Include="Mian\UI\CustomStatWindows.cs" />
+        <Compile Include="Mian\UI\CustomStatsRows.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="default_config.json" />

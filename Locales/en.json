@@ -245,22 +245,7 @@
   "world_law_fluid_sexuality_description": "Unit preferences may change overtime even when already established",
   "world_law_fluid_sexuality_description_2": "Sexuality can be fluid!",
   
-  "lesbian": "Lesbian",
-  "gay": "Gay",
-  "straight": "Straight",
-  "bisexual": "Bisexual",
-  "pansexual": "Pansexual",
-  "heterosexual": "Heterosexual",
-  "homosexual": "Homosexual",
-  "asexual": "Asexual",
-  "lesbian_romantic": "Lesbian Romantic",
-  "gay_romantic": "Gay Romantic",
-  "straight_romantic": "Straight Romantic",
-  "bisexual_romantic": "Bisexual Romantic",
-  "pansexual_romantic": "Pansexual Romantic",
-  "heterosexual_romantic": "Heterosexual Romantic",
-  "homosexual_romantic": "Homosexual Romantic",
-  "asexual_romantic": "Asexual Romantic",
+  "orientations": "Orientations",
   
   "statistics_lesbian_description": "They statistically pull more women than straight men ever could",
   "statistics_gay_description": "They statistically pull more men than straight woman ever could",
@@ -284,12 +269,15 @@
   "statistics_lonely": "Lonely Units",
   "statistics_lonely_description": "They just want someone to care :(",
 
-  "statistics_broke_up": "Broken Up",
+  "broke_up": "Broke Up",
+  "statistics_broke_up": "Broke Up",
   "statistics_broke_up_description": "So many promises lost to time",
 
+  "cheated_on": "Cheated On",
   "statistics_cheated_on": "Cheated On",
   "statistics_cheated_on_description": "Beloved memories, now shattered on the floor",
 
+  "adopted_babies": "Adopted Babies",
   "statistics_adopted_baby": "Adopted Babies",
   "statistics_adopted_baby_description": "So many younglings!",
   
@@ -311,9 +299,6 @@
   "romantic": "Romantic",
   "like_group": "Group",
   "intimate": "Intimate Type",
-  "identities": "Identities",
-  "expressions": "Expressions",
-  "genitals": "Genitals",
   
   "tab_title_tol": "Topic of Love",
   "tab_desc_tol": "For all your romantic and sexual needs!",

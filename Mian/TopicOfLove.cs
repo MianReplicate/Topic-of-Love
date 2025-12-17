@@ -7,6 +7,7 @@ using HarmonyLib;
 using NeoModLoader.General;
 using Topic_of_Love.Mian.CustomAssets.Custom;
 using Topic_of_Love.Mian.CustomAssets.Custom.meta;
+using Topic_of_Love.UI.Mian;
 
 namespace Topic_of_Love.Mian
 {
@@ -65,6 +66,9 @@ namespace Topic_of_Love.Mian
             
             TooltipAssets.Init();
             LikesManager.Init();
+
+            // SmoothLoader.add(new MapLoaderAction(CustomStatWindows.Init), "Creating Topic of Love Interfaces...", pToEnd: true);
+            // MapBox.on_world_loaded += CustomStatWindows.Init;
         }
         private void Awake()
         {
