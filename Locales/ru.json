@@ -1,0 +1,343 @@
+{
+  "status_title_went_on_date": "Сходил на свидание",
+  "status_description_went_on_date": "Мир для двоих",
+  
+  "status_title_just_kissed": "Поцеловались",
+  "status_description_just_kissed": "Такая милота!",
+
+  "status_title_disliked_sex": "Не понравилось совокупление",
+  "status_description_disliked_sex": "Сексуальные предпочтения не совпали",
+
+  "status_title_enjoyed_sex": "Понравилось совокупление",
+  "status_description_enjoyed_sex": "Сексуальные предпочтения совпали",
+
+  "status_title_okay_sex": "Нормально насладился совокуплением",
+  "status_description_okay_sex": "Предпочтения совпали, но могло быть лучше",
+
+  "status_title_cheated_on": "Изменили",
+  "status_description_cheated_on": "Бывший возлюбленный изменил им",
+  
+  "status_title_broke_up": "Расстались",
+  "status_description_broke_up": "Отношения не сложились",
+
+  "happiness_went_on_date": "Сходил на свидание",
+  "happiness_dialog_went_on_date_0": "Это было потрясающее свидание!",
+  "happiness_dialog_went_on_date_1": "Я так сильно тебя люблю...",
+  "happiness_dialog_went_on_date_2": "Я никогда не чувствовал себя таким счастливым!",
+  "happiness_dialog_went_on_date_3": "Интересно, как выглядят твои глаза ночью...",
+  "happiness_dialog_went_on_date_4": "Кажется, я поймал идеальную рыбу!",
+
+  "happiness_adopted_baby": "Усыновил ребёнка",
+  "happiness_dialog_adopted_baby_0": "Так приятно наконец-то иметь ребёнка.",
+  "happiness_dialog_adopted_baby_1": "Наконец-то! Ребёнок!",
+  "happiness_dialog_adopted_baby_2": "Это самый счастливый день в моей жизни!",
+  "happiness_dialog_adopted_baby_3": "Не терпится тебя воспитывать, малыш.",
+
+  "happiness_did_not_want_baby": "Нежеланный ребёнок",
+  "happiness_dialog_did_not_want_baby_0": "Вот чёрт, теперь придётся нянчиться...",
+  "happiness_dialog_did_not_want_baby_1": "Я не хочу возиться с ребёнком всю жизнь.",
+  "happiness_dialog_did_not_want_baby_2": "Ты издеваешься?",
+  "happiness_dialog_did_not_want_baby_3": "Ребёнок?! Скажи, что это шутка.",
+
+  "happiness_okay_sex": "Нормально насладился совокуплением",
+  "happiness_dialog_okay_sex_0": "Нормально, но не идеально.",
+  "happiness_dialog_okay_sex_1": "Ну, хотя бы было неплохо.",
+
+  "happiness_enjoyed_sex": "Понравилось совокупление",
+  "happiness_dialog_enjoyed_sex_0": "Мне это понравилось! Я бы повторил.",
+  "happiness_dialog_enjoyed_sex_1": "Отлично, именно так, как я люблю.",
+
+  "happiness_disliked_sex": "Не понравилось совокупление",
+  "happiness_dialog_disliked_sex_0": "Мне вообще не понравилось.",
+  "happiness_dialog_disliked_sex_1": "Фу, это было ужасно, жалею, что согласился.",
+
+  "happiness_feels_lonely": "Ощущает одиночество",
+  "happiness_dialog_feels_lonely_0": "Неужели никто меня не любит?",
+  "happiness_dialog_feels_lonely_1": "Хочу почувствовать что-то большее...",
+  "happiness_dialog_feels_lonely_2": "Мне так не хватает тепла...",
+  "happiness_dialog_feels_lonely_3": "Разве я никому не нужен?",
+
+  "happiness_cheated_on": "Изменили",
+  "happiness_dialog_cheated_on_0": "Почему это всегда происходит со мной..?",
+  "happiness_dialog_cheated_on_1": "Это я виноват?",
+  "happiness_dialog_cheated_on_2": "За что мне всё это?",
+  "happiness_dialog_cheated_on_3": "Где же я ошибся?",
+
+  "happiness_broke_up": "Расстались",
+  "happiness_dialog_broke_up_0": "Жаль, что всё закончилось...",
+  "happiness_dialog_broke_up_1": "Хорошо хоть не изменили...",
+  "happiness_dialog_broke_up_2": "Я так сильно тебя любил.",
+  "happiness_dialog_broke_up_3": "Жаль, что всё вышло именно так.",
+
+  "happiness_true_self": "Осознал свою ориентации",
+  "happiness_dialog_true_self_0": "Так приятно наконец понять себя.",
+  "happiness_dialog_true_self_1": "Моя ориентация - важная часть того, кем я являюсь.",
+  "happiness_dialog_true_self_2": "Я принимаю себя и больше не собираюсь это скрывать!",
+  "happiness_dialog_true_self_3": "Я не хочу быть другим, и это нормально.",
+
+  "happiness_orientation_fits": "Ориентация принята обществом",
+  "happiness_dialog_orientation_fits_0": "Здорово, что я могу говорить о своей ориентации без осуждения.",
+  "happiness_dialog_orientation_fits_1": "Я счастлив, что меня здесь принимают таким, какой я есть.",
+
+  "happiness_orientation_does_not_fit": "Ориентация вызывает осуждение",
+  "happiness_dialog_orientation_does_not_fit_0": "Почему я должен был родиться таким..?",
+  "happiness_dialog_orientation_does_not_fit_1": "Почему меня осуждают за то, кто я есть?",
+
+  "happiness_insulted_for_orientation": "Оскорблён из-за своей ориентации",
+  "happiness_dialog_insulted_for_orientation_0": "Почему им вообще есть дело до того, с кем я встречаюсь или сплю?!",
+  "happiness_dialog_insulted_for_orientation_1": "Что с ними не так?!",
+  
+  "task_insult_orientation": "Оскорбляет за ориентацию",
+  "task_invite_for_sex": "Приглашает на совокупление",
+  "task_invite_for_reproduction": "Приглашает к размножению",
+  "task_try_kiss": "Пробует поцеловать",
+  "task_have_sex_go": "Идёт на совокупление",
+  "task_reproduce_preservation": "Размножается ради сохранения рода",
+  "task_try_sexual_ivf": "Пробует половое ЭКО",
+  "task_go_sexual_ivf": "Идёт на половое ЭКО",
+  "task_go_and_wait_sexual_ivf": "Идёт и ждёт половое ЭКО",
+  "task_action_sexual_ivf": "Начинает половое ЭКО",
+  "task_wait_sexual_ivf": "Ждёт завершения полового ЭКО",
+  "task_try_date": "Пробует пригласить на свидание",
+  "task_action_date": "Идёт на свидание",
+  "task_follow_action_date": "Следует на свидание",
+  "task_find_partner": "Ищет партнёра",
+
+  "not_same_island": "Они не на одном острове! Операция отменена!",
+  "unit_selected": "Выберите двух юнитов для влюблённости",
+  "unit_selected_first": "Теперь выберите второго юнита",
+  "lover_selected": "Выберите юнита, у которого есть возлюбленный",
+  "no_lover": "У этого юнита нет возлюбленного!",
+  "unit_too_far": "Сила отменена! Оба юнита должны находиться рядом и на одном острове!",
+
+  "love_cancelled": "Принудительная влюблённость отменена!",
+  "love_successful": "Принудительная влюблённость успешно выполнена! Они не расстанутся сами, если вы не вмешаетесь.",
+  "force_lover": "Принудительная влюблённость",
+  "force_lover_description": "Заставить юнита стать влюблённым в другого юнита",
+
+  "sex_cancelled": "Принудительное совокупление отменено!",
+  "sex_successful": "Принудительное совокупление успешно! Они попытаются заняться совокуплением при первой возможности. Внешние силы могут помешать процессу.",
+  "force_sex": "Принудительное совокупление",
+  "force_sex_description": "Заставить юнита вступить в совокупление с другим юнитом",
+  
+  "breakup_successful": "Расставание успешно!",
+  "force_breakup": "Принудительное расставание",
+  "force_breakup_description": "Заставить пару расстаться",
+
+  "kiss_cancelled": "Принудительный поцелуй отменён!",
+  "kiss_successful": "Принудительный поцелуй выполнен! Они попытаются поцеловаться при первой возможности. Внешние силы могут прервать процесс.",
+  "force_kiss": "Принудительный поцелуй",
+  "force_kiss_description": "Заставить юнита поцеловать другого",
+
+  "sexualivf_successful": "Принудительное оплодотворение успешно! Они попытаются зачать ребёнка при первой возможности. Внешние силы могут помешать этому.",
+  "sexualivf_invalid_unit": "Этот юнит уже беременен или не имеет дома! Операция отменена.",
+  "sexualivf_cancelled": "Принудительное оплодотворение отменено!",
+  "sexualivf_incapable_reproduce": "Эти двое не могут размножаться вместе!",
+  "force_sexual_i_v_f": "Принудительное оплодотворение",
+  "force_sexual_i_v_f_description": "Заставить юнита зачать ребёнка с другим юнитом",
+
+  "date_cancelled": "Принудительное свидание отменено!",
+  "date_successful": "Принудительное свидание успешно! Они попытаются начать свидание при первой возможности. Внешние силы могут помешать этому.",
+  "force_date": "Принудительное свидание",
+  "force_date_description": "Заставить юнита пойти на свидание",
+
+  "trait_intimacy_averse": "Избегающий близости",
+  "trait_intimacy_averse_info": "Близость не влияет на него, поэтому он не расстаётся и не чувствует одиночества из-за отсутствия близости.",
+  "trait_intimacy_averse_info_2": "Он может быть один - и ему это комфортно!",
+
+  "trait_faithful": "Верный",
+  "trait_faithful_info": "Никогда не изменит партнёру, даже если его романтические предпочтения больше не совпадают с полом возлюбленного.",
+  "trait_faithful_info_2": "Так правильно поступать.",
+
+  "trait_unfaithful": "Неверный",
+  "trait_unfaithful_info": "Никогда не будет верен в отношениях.",
+  "trait_unfaithful_info_2": "С ним лучше быть осторожнее!",
+
+  "trait_abroromantic": "Аброромантик",
+  "trait_abroromantic_info": "Его романтическая ориентация может со временем меняться.",
+  "trait_abroromantic_info_2": "Будет трудно сохранить отношения надолго.",
+
+  "trait_abrosexual": "Абросексуал",
+  "trait_abrosexual_info": "Его сексуальная ориентация может со временем меняться.",
+  "trait_abrosexual_info_2": "Разум - штука сложная.",
+
+  "trait_dislike_sex": "Ассексуал",
+  "trait_dislike_sex_info": "Не испытывает желания к совокуплению, в отличие от большинства.",
+  "trait_dislike_sex_info_2": "Совокупление - странное занятие, мокрое и утомительное.",
+
+  "trait_dislike_romance": "Аромантик",
+  "trait_dislike_romance_info": "Не испытывает влечения к романтической любви, в отличие от большинства.",
+  "trait_dislike_romance_info_2": "Дело не в том, что не нашёл 'того самого', просто не чувствует этого.",
+
+  "like_phallus_sexual_info_2": "Главное - попасть в цель.",
+  "like_vulva_sexual_info_2": "Где есть отверстие - там и цель.",
+
+  "like_female_romantic_info_2": "Интересно, что нравится девушкам?",
+  "like_female_sexual_info_2": "Её тело на 70% из воды - и у них жажда.",
+
+  "like_male_romantic_info_2": "Выходи за меня!",
+  "like_male_sexual_info_2": "Десять мужчин, пожалуйста.",
+
+  "like_nonbinary_romantic_info_2": "Любовные предпочтения вне бинарных рамок.",
+  "like_nonbinary_sexual_info_2": "Не хочу, чтобы они были другими.",
+
+  "like_feminine_romantic_info_2": "Нежная, заботливая и добрая.",
+  "like_feminine_sexual_info_2": "Стройная, милая и красивая.",
+
+  "like_masculine_romantic_info_2": "Уверенный, смелый и сильный.",
+  "like_masculine_sexual_info_2": "Крупный, доминантный и мощный.",
+  
+  "trait_unfluid": "Неподвижные предпочтения",
+  "trait_unfluid_info": "Их романтические и сексуальные предпочтения никогда не изменятся",
+  "trait_unfluid_info_2": "Иногда предпочтения остаются неизменными.",
+
+  "trait_group_dislikes": "Неприязнь к ориентациям",
+
+  "culture_trait_homophobic": "Гомофобия",
+  "culture_trait_homophobic_info": "Гомофобия глубоко укоренилась в этой культуре, часто проявляясь в дискриминации, притеснениях и препятствовании участия людей, предпочитающих свой же пол, в политике, обществе и армии.",
+  "culture_trait_homophobic_info_2": "Фу, эти гомосексуалы!",
+
+  "culture_trait_heterophobic": "Гетерофобия",
+  "culture_trait_heterophobic_info": "Гетерофобия глубоко укоренилась в этой культуре, часто проявляясь в дискриминации, притеснениях и препятствовании участия людей, предпочитающих противоположный пол, в политике, обществе и армии.",
+  "culture_trait_heterophobic_info_2": "Зачем вообще встречаться с другим полом?",
+
+  "culture_trait_incest": "Инцест",
+  "culture_trait_incest_info": "Биологически родственные члены могут влюбляться и вступать в совокупление",
+  "culture_trait_incest_info_2": "Неловко!",
+
+  "culture_trait_orientationless": "Прорепродуктивные",
+  "culture_trait_orientationless_info": "Понятие ориентации не существует. Они будут искать только таких возлюбленных, с которыми могут размножаться.",
+  "culture_trait_orientationless_info_2": "Что такое ориентация? Это колдовские выдумки!",
+
+  "culture_trait_committed": "Верные",
+  "culture_trait_committed_info": "Они преданы отношениям и никогда не изменят и не расстанутся, независимо от обстоятельств.",
+  "culture_trait_committed_info_2": "Верность - вот что важно!",
+
+  "culture_trait_mature_dating": "Взрослые свидания",
+  "culture_trait_mature_dating_info": "Они будут встречаться только с теми, кто находится на том же возрастном этапе.",
+  "culture_trait_mature_dating_info_2": "Больше никаких 18-летних с 90-летними!",
+
+  "culture_trait_sexual_expectations": "Сексуальные ожидания",
+  "culture_trait_sexual_expectations_info": "Возлюбленные могут удовлетворять свои сексуальные ожидания с кем-то другим без последствий, даже если это не их партнёр.",
+  "culture_trait_sexual_expectations_info_2": "Они могут выражать свою сексуальность!",
+
+  "culture_trait_sex_for_reproduction": "Сохранение",
+  "culture_trait_sex_for_reproduction_info": "Сексуальное размножение никогда не считается изменой!",
+  "culture_trait_sex_for_reproduction_info_2": "Размножение с кем угодно - это нормально",
+
+  "culture_trait_sex_for_reproduction_only": "Священное совокупление",
+  "culture_trait_sex_for_reproduction_only_info": "Люди совокупляются только для целей размножения.",
+  "culture_trait_sex_for_reproduction_only_info_2": "Совокупление - это священное! Как вы смеете!",
+
+  "culture_trait_scar_of_incest": "След инцеста",
+  "culture_trait_scar_of_incest_info": "Цивилизации считают, что инцест - важная часть их культуры и никогда не будут его устранять.",
+  "culture_trait_scar_of_incest_info_2": "Важно поддерживать высокий уровень населения!",
+
+  "subspecies_trait_preservation": "Сохранение",
+  "subspecies_trait_preservation_info": "Если их относительное количество к максимальным пределам невелико, они будут искать людей для размножения, не считаясь с культурой или ориентацией.",
+  "subspecies_trait_preservation_info_2": "Когда становится тяжело, нужно делать всё, чтобы сохранить своё наследие.",
+
+  "subspecies_trait_reproduction_same_sex": "Размножение одинакового пола",
+  "subspecies_trait_reproduction_same_sex_info": "Для размножения необходимы два представителя одного пола",
+  "subspecies_trait_reproduction_same_sex_info_2": "Двое действительно становятся больше",
+  
+  "world_law_fluid_sexuality_title": "Изменчивые предпочтения",
+  "world_law_fluid_sexuality_description": "Предпочтения юнитов могут меняться со временем, даже если они уже установлены",
+  "world_law_fluid_sexuality_description_2": "Сексуальность может быть изменчивой!",
+  
+  "lesbian": "Лесбиянка",
+  "gay": "Гей",
+  "straight": "Гетеро",
+  "bisexual": "Бисексуал",
+  "pansexual": "Пансексуал",
+  "heterosexual": "Гетеросексуал",
+  "homosexual": "Гомосексуал",
+  "asexual": "Асексуал",
+  "lesbian_romantic": "Лесбиянка романтик",
+  "gay_romantic": "Гей романтик",
+  "straight_romantic": "Гетеро романтик",
+  "bisexual_romantic": "Бисексуал романтик",
+  "pansexual_romantic": "Пансексуал романтик",
+  "heterosexual_romantic": "Гетеросексуал романтик",
+  "homosexual_romantic": "Гомосексуал романтик",
+  "asexual_romantic": "Асексуал романтик",
+  
+  "statistics_lesbian_description": "Статистически они притягивают больше женщин, чем гетеро-мужчины когда-либо могли",
+  "statistics_gay_description": "Статистически они притягивают больше мужчин, чем гетеро-женщины когда-либо могли",
+  "statistics_straight_description": "Статистически они чертовски скучны",
+  "statistics_bisexual_description": "Статистически любят раскачиваться туда-сюда",
+  "statistics_pansexual_description": "На самом деле им не нравятся 'пан', глупыш",
+  "statistics_heterosexual_description": "Им нравятся представители противоположного пола",
+  "statistics_homosexual_description": "Им нравятся представители своего пола",
+  "statistics_asexual_description": "Сексуальная близость для них - это блек",
+
+  "statistics_lesbian_romantic_description": "Статистически они притягивают больше женщин, чем гетеро-мужчины когда-либо могли",
+  "statistics_gay_romantic_description": "Статистически они притягивают больше мужчин, чем гетеро-женщины когда-либо могли",
+  "statistics_straight_romantic_description": "Статистически они чертовски скучны",
+  "statistics_bisexual_romantic_description": "Статистически любят раскачиваться туда-сюда",
+  "statistics_pansexual_romantic_description": "На самом деле им не нравятся 'пан', глупыш",
+  "statistics_heterosexual_romantic_description": "Им нравятся представители противоположного пола",
+  "statistics_homosexual_romantic_description": "Им нравятся представители своего пола",
+  "statistics_asexual_romantic_description": "Романтическая близость для них - это блек",
+
+  "lonely_units": "Одинокие юниты",
+  "statistics_lonely": "Одинокие юниты",
+  "statistics_lonely_description": "Им просто хочется, чтобы о них заботились :(",
+
+  "statistics_broke_up": "Расставшиеся",
+  "statistics_broke_up_description": "Так много обещаний потеряно со временем",
+
+  "statistics_cheated_on": "Изменяли",
+  "statistics_cheated_on_description": "Любимые воспоминания теперь разбиты на полу",
+
+  "statistics_adopted_baby": "Усыновлённые дети",
+  "statistics_adopted_baby_description": "Так много малышей!",
+  
+  "main_orientation": "Основная ориентация",
+  "founder_orientation": "Ориентация основателя",
+  
+  "opinion_homosexual": "Отношение к гомосексуальности",
+  "opinion_heterosexual": "Отношение к гетеросексуальности",
+  "opinion_king_lovers": "Короли - влюблённые",
+  
+  "intimacy_happiness": "Близость",
+  "stats_icon_intimacy_happiness": "Близость",
+  "romantic_orientation": "Романтическая ориентация",
+  "sexual_orientation": "Сексуальная ориентация",
+
+  "intimacy": "Близость",
+  
+  "sexual": "Сексуальная",
+  "romantic": "Романтическая",
+  "like_group": "Группа",
+  "intimate": "Тип близости",
+  "identities": "Идентичности",
+  "expressions": "Выражения",
+  "genitals": "Гениталии",
+
+  "tab_title_tol": "Тема Любви",
+  "tab_desc_tol": "Для всех ваших романтических и сексуальных потребностей!",
+  "tab_mind_likes": "Ориентация",
+  "tab_mind_likes_description": "Посмотрите на их романтические и сексуальные предпочтения... с кем они хотели бы переспать?",
+  
+  "mind_likes_regenerate_orientation": "Перегенерация ориентации",
+  "mind_likes_regenerate_orientation_description": "Перебрасывает ориентацию юнита на основе его активных предпочтений",
+  "mind_likes_regenerate_orientation_description_2": "Женщина - лесбиянка или гетеро, если ей нравятся 0 и 1? Или пусть она сама выберет!",
+
+  "Graphs": "Графики мода",
+  "ModGraphs": "Статистика",
+  "ModGraphs Description": "Добавляет в игру кастомные графики статистики. Выключите и перезапустите игру, если при использовании графиков возникают зависания.",
+  
+  "Misc": "Настройки разработчика",
+  "SlowOnLog": "Замедление при дебаге",
+  "SlowOnLog Description": "Автоматически замедляет игру, когда выводится конкретная часть сообщения отладки. Оставьте пустым, чтобы отключить.",
+
+  "StackTrace": "Стек вызовов",
+  "StackTrace Description": "Выводит стек вызовов при появлении конкретной части сообщения отладки. Оставьте пустым, чтобы отключить.",
+
+  "Debug": "Отладка",
+  "Debug Description": "Включает логирование отладки. Включайте только по просьбе.",
+  
+  "Ignore": "Игнорировать",
+  "Ignore Description": "Игнорировать логи с этими ключевыми словами"
+ }

@@ -1,0 +1,349 @@
+{
+  "status_title_went_on_date": "Ging auf ein Date",
+  "status_description_went_on_date": "Eine Welt für zwei",
+  
+  "status_title_just_kissed": "Hat gerade geküsst",
+  "status_description_just_kissed": "Was für Turteltäubchen",
+  
+  "status_title_disliked_sex": "Verabschäute das Kopulieren",
+  "status_description_disliked_sex": "Sexuelle Präferenzen wurden nicht erfüllt",
+
+  "status_title_enjoyed_sex": "Genoss das Kopulieren",
+  "status_description_enjoyed_sex": "Sexuelle Präferenzen wurden erfüllt",
+
+  "status_title_okay_sex": "Fand das Kopulieren okay",
+  "status_description_okay_sex": "Sexuelle Präferenzen wurden zwar erfüllt, war aber nicht das beste",
+
+  "status_title_cheated_on": "Betrogen",
+  "status_description_cheated_on": "Der Partner war untreu",
+  
+  "status_title_broke_up": "Hat sich getrennt",
+  "status_description_broke_up": "Es hat einfach nicht geklappt",
+
+  "happiness_went_on_date": "Ging auf ein Date",
+  "happiness_dialog_went_on_date_0": "Das war ein tolles Date!",
+  "happiness_dialog_went_on_date_1": "Ich liebe dich so sehr..",
+  "happiness_dialog_went_on_date_2": "Ich habe mich noch nie so gierig gefreut!",
+  "happiness_dialog_went_on_date_3": "Ich frage mich, wie deine Augen bei Nacht aussehen..",
+  "happiness_dialog_went_on_date_4": "Ich muss wohl fischen gegangen sein... denn du bist der perfekte Fang!",
+
+  "happiness_adopted_baby": "Baby adoptiert",
+  "happiness_dialog_adopted_baby_0": "Es fühlt sich so gut an, ein Baby zu haben.",
+  "happiness_dialog_adopted_baby_1": "Endlich ein Baby.",
+  "happiness_dialog_adopted_baby_2": "Das ist der beste Tag meines Lebens!",
+  "happiness_dialog_adopted_baby_3": "Ich kann es nicht erwarten, dich aufzuziehen.",
+
+  "happiness_did_not_want_baby": "Ungewolltes Baby",
+  "happiness_dialog_did_not_want_baby_0": "Verdammt! Wer passt jetzt auf das Kind auf..",
+  "happiness_dialog_did_not_want_baby_1": "Ich will mich doch nicht für mein restliches Leben um ein Kind kümmern..",
+  "happiness_dialog_did_not_want_baby_2": "Willst du mich verarschen??",
+  "happiness_dialog_did_not_want_baby_3": "Ein Baby? Sag mir das das ein Witz war.",
+
+  "happiness_okay_sex": "Fand das Kopulieren okay",
+  "happiness_dialog_okay_sex_0": "Das war okay, aber nicht das beste.",
+  "happiness_dialog_okay_sex_1": "Es war in Ordnung.",
+  
+  "happiness_enjoyed_sex": "Genoss das Kopulieren",
+  "happiness_dialog_enjoyed_sex_0": "Ich liebe es! Ich würde es gerne wieder tun.",
+  "happiness_dialog_enjoyed_sex_1": "Das war perfekt. Genau wie es mir gefällt!",
+
+  "happiness_disliked_sex": "Verabschäute das Kopulieren",
+  "happiness_dialog_disliked_sex_0": "Mir gefiel das kein Stückchen..",
+  "happiness_dialog_disliked_sex_1": "Das war schrecklich. Ich bereue es schon jetzt!",
+
+  "happiness_feels_lonely": "Einsam",
+  "happiness_dialog_feels_lonely_0": "Ist es meine Schuld das mich keiner liebt?",
+  "happiness_dialog_feels_lonely_1": "Ich möchte mehr fühlen..",
+  "happiness_dialog_feels_lonely_2": "Ich will wieder mit jemanden in Berührung kommen..",
+  "happiness_dialog_feels_lonely_3": "Will mich einfach niemand?",
+  
+  "happiness_cheated_on": "Betrogen",
+  "happiness_dialog_cheated_on_0": "Warum passiert mir das immer..?",
+  "happiness_dialog_cheated_on_1": "War es meine Schuld?",
+  "happiness_dialog_cheated_on_2": "Was habe ich getan um das zu verdienen?",
+  "happiness_dialog_cheated_on_3": "Wo ist alles schief gelaufen?",
+
+  "happiness_broke_up": "Getrennt",
+  "happiness_dialog_broke_up_0": "Ich wünschte es hätte nicht enden müssen..",
+  "happiness_dialog_broke_up_1": "Zumindest wurde ic nicht betrogen..",
+  "happiness_dialog_broke_up_2": "Ich habe sie so sehr geliebt.",
+  "happiness_dialog_broke_up_3": "Mir tut es leid, dass es so enden musste.",
+  
+  "happiness_true_self": "Orientierung fühlt sich anders an",
+  "happiness_dialog_true_self_0": "Es fühlt sich so gut an, mich selbst zu erkennen.",
+  "happiness_dialog_true_self_1": "Meine Orientierung ist der größte Teil dessen, was mich ausmacht.",
+  "happiness_dialog_true_self_2": "Ich werde mich selbst annehmen und mich nicht verstecken!",
+  "happiness_dialog_true_self_3": "Ich würde es nicht anders wollen.",
+
+  "happiness_orientation_fits": "Orientierung wird akzeptiert",
+  "happiness_dialog_orientation_fits_0": "Es ist schön, dass ich über meine Orientierung sprechen kann, ohne dafür verurteilt zu werden.",
+  "happiness_dialog_orientation_fits_1": "Ich bin so glücklich, dass ich hier akzeptiert werde.",
+
+  "happiness_orientation_does_not_fit": "Orientierung wird verachtet",
+  "happiness_dialog_orientation_does_not_fit_0": "Warum musste ich so geboren werden?",
+  "happiness_dialog_orientation_does_not_fit_1": "Warum werde ich dafür gehasst, wer ich bin?",
+
+ "happiness_insulted_for_orientation": "Wegen Orientierung beleidigt",
+  "happiness_dialog_insulted_for_orientation_0": "Warum sollte es sie kümmern, mit wem ich kopuliere oder date?!",
+  "happiness_dialog_insulted_for_orientation_1": "Verdammt nochmal was stimmt mit denen nicht!",
+  
+  "task_insult_orientation": "Orientierungen beleidigen",
+  "task_invite_for_sex": "Zum Kopulieren einladen",
+  "task_invite_for_reproduction": "Zur Fortpflanzung einladen",
+  "task_try_kiss": "Kuss versuchen",
+  "task_have_sex_go": "Zum Kopulieren gehen",
+  "task_reproduce_preservation": "Fortpflanzung zur Erhaltung",
+  "task_try_sexual_ivf": "Sexuelle IVF versuchen",
+  "task_go_sexual_ivf": "Sexuelle IVF durchführen",
+  "task_go_and_wait_sexual_ivf": "Gehen und auf sexuelle IVF warten",
+  "task_action_sexual_ivf": "Sexuelle IVF starten",
+  "task_wait_sexual_ivf": "Auf sexuelle IVF warten",
+  "task_try_date": "Date versuchen",
+  "task_action_date": "Auf Date gehen",
+  "task_follow_action_date": "Date folgen",
+  "task_find_partner": "Partner suchen",
+
+  "not_same_island": "Sie sind nicht auf derselben Insel! Vorgang abgebrochen!",
+  "unit_selected": "Wähle zwei Einheiten zum Verlieben",
+  "unit_selected_first": "Wähle jetzt eine weitere Einheit",
+  "lover_selected": "Wähle eine Einheit mit einem Liebhaber",
+  "no_lover": "Diese Einheit hat keinen Liebhaber!",
+  "unit_too_far": "Kraft abgebrochen! Die beiden Einheiten müssen nah genug sein und auf derselben Insel!",
+
+  "love_cancelled": "Erzwungene Liebe abgebrochen!",
+  "love_successful": "Erzwungene Liebe erfolgreich! Sie werden sich nicht von selbst trennen, es sei denn, du greifst ein.",
+  "force_lover": "Liebe erzwingen",
+  "force_lover_description": "Zwingt eine Einheit, sich in eine andere zu verlieben",
+
+  "sex_cancelled": "Erzwungenes Kopulieren abgebrochen!",
+  "sex_successful": "Erzwungenes Kopulieren erfolgreich! Sie werden so schnell wie möglich versuchen zu kopulieren. Äußere Kräfte können den Akt unterbrechen.",
+  "force_sex": "Kopulieren erzwingen",
+  "force_sex_description": "Zwingt eine Einheit, mit einer anderen zu kopulieren",
+  
+  
+  "breakup_successful": "Trennung erfolgreich!",
+  "force_breakup": "Trennung erzwingen",
+  "force_breakup_description": "Zwingt ein Liebespaar, sich zu trennen",
+
+  "kiss_cancelled": "Erzwungener Kuss abgebrochen!",
+  "kiss_successful": "Erzwungener Kuss erfolgreich! Sie werden so schnell wie möglich versuchen zu küssen. Äußere Kräfte können den Kuss unterbrechen.",
+  "force_kiss": "Kuss erzwingen",
+  "force_kiss_description": "Zwingt eine Einheit, jemanden zu küssen",
+
+  "sexualivf_successful": "Sexuelle IVF erfolgreich! Sie werden so schnell wie möglich versuchen, ein Baby zu machen. Äußere Kräfte können diesen Vorgang unterbrechen.",
+  "sexualivf_invalid_unit": "Diese Einheit ist derzeit schwanger oder hat kein Haus! Vorgang abgebrochen.",
+  "sexualivf_cancelled": "Erzwungene sexuelle IVF abgebrochen!",
+  "sexualivf_incapable_reproduce": "Die beiden können sich nicht zusammen fortpflanzen!",
+  "force_sexual_i_v_f": "Sexuelle IVF erzwingen",
+  "force_sexual_i_v_f_description": "Zwingt eine Einheit, ein Baby über sexuelle IVF zu bekommen",
+
+  "date_cancelled": "Erzwungenes Date abgebrochen!",
+  "date_successful": "Date erfolgreich! Sie werden so schnell wie möglich versuchen, das Date zu beginnen. Äußere Kräfte können dieses Date unterbrechen.",
+  "force_date": "Date erzwingen",
+  "force_date_description": "Zwingt eine Einheit, auf ein Date zu gehen",
+
+  "trait_intimacy_averse": "Intimitätsavers",
+  "trait_intimacy_averse_info": "Intimität betrifft diese Einheit nicht, daher wird sie sich nicht wegen Intimität trennen oder einsam fühlen.",
+  "trait_intimacy_averse_info_2": "Sie könnten allein sein und es wäre ihnen egal!",
+
+  "trait_faithful": "Treue Seele",
+  "trait_faithful_info": "Sie werden niemals betrügen, selbst wenn ihre romantische Präferenz nicht mehr zum Geschlecht ihres Partners passt",
+  "trait_faithful_info_2": "Es ist das Richtige.",
+
+  "trait_unfaithful": "Untreu",
+  "trait_unfaithful_info": "Sie werden sich niemals binden",
+  "trait_unfaithful_info_2": "Vorsicht mit dem da!",
+
+  "trait_abroromantic": "Aboromantisch",
+  "trait_abroromantic_info": "Ihre romantische Orientierung kann sich im Laufe der Zeit ändern",
+  "trait_abroromantic_info_2": "Es wird schwer, einen Liebhaber zu finden.",
+
+  "trait_abrosexual": "Abrosexuell",
+  "trait_abrosexual_info": "Ihre sexuelle Orientierung kann sich im Laufe der Zeit ändern",
+  "trait_abrosexual_info_2": "Hirne sind komplex.",
+
+  "trait_dislike_sex": "Asexuell",
+  "trait_dislike_sex_info": "Sie empfinden keine sexuelle Anziehung zu anderen",
+  "trait_dislike_sex_info_2": "Kopulieren ist so komisch. Es ist so zeitaufwendig.",
+
+  "trait_dislike_romance": "Aromantisch",
+  "trait_dislike_romance_info": "Sie begehren keine Liebe wie die meisten",
+  "trait_dislike_romance_info_2": "Es liegt nicht daran, dass sie nicht die richtige Person gefunden haben – sie fühlen einfach so.",
+
+  "like_phallus_sexual_info_2": "Man steckt es in das Ziel.",
+  "like_vulva_sexual_info_2": "Wo ein Loch, da ein Ziel.",
+
+  "like_female_romantic_info_2": "Was sind denn so Dinge die Mädchen mögen?",
+  "like_female_sexual_info_2": "Dieser Körper besteht zu 70% aus Wasser und sie wollen jedenTropen davon.",
+
+  "like_male_romantic_info_2": "Bitte heirate mich!",
+  "like_male_sexual_info_2": "Zehn Männer bitte.",
+
+  "like_nonbinary_romantic_info_2": "Liebenswerte Wesen außerhalb des Binären.",
+  "like_nonbinary_sexual_info_2": "Ich würde sie nicht anders haben wollen.",
+
+  "like_feminine_romantic_info_2": "Süß, mitfühlend und freundlich.",
+  "like_feminine_sexual_info_2": "Schlank, süß und hübsch.",
+
+  "like_masculine_romantic_info_2": "Selbstbewusst, mutig und stark.",
+  "like_masculine_sexual_info_2": "Groß, dominant und stark.",
+
+  "like_phallus_sexual": "Phallus",
+  "like_vulva_sexual": "Vulva",
+  "like_masculine_sexual_info": "In sexueller Hinsicht bevorzugt sie/er maskuline Merkmale",
+  
+  "trait_unfluid": "Unveränderlich",
+  "trait_unfluid_info": "Ihre romantischen und sexuellen Präferenzen werden sich niemals ändern",
+  "trait_unfluid_info_2": "Manche Vorlieben sind eben nicht fließend, so ist es nunmal.",
+
+  "trait_group_dislikes": "Orientierungsabneigungen",
+
+  "culture_trait_homophobic": "Homophob",
+  "culture_trait_homophobic_info": "Homophobie ist tief in dieser Kultur verwurzelt und führt oft zu Diskriminierung, Belästigung und Ausschluss von Menschen, die das gleiche Geschlecht mögen, aus politischen, sozialen und militärischen Bereichen.",
+  "culture_trait_homophobic_info_2": "Ugh, diese verdammten Homosexuellen!",
+
+  "culture_trait_heterophobic": "Heterophob",
+  "culture_trait_heterophobic_info": "Heterophobie ist tief in dieser Kultur verwurzelt und führt oft zu Diskriminierung, Belästigung und Ausschluss von Menschen, die das andere Geschlecht mögen, aus politischen, sozialen und militärischen Bereichen.",
+  "culture_trait_heterophobic_info_2": "Warum sollte man jemals das andere Geschlecht daten wollen?",
+
+  "culture_trait_incest": "Inzest",
+  "culture_trait_incest_info": "Biologisch verwandte Mitglieder können sich verlieben und kopulieren",
+  "culture_trait_incest_info_2": "Ekelhaft!",
+
+  "culture_trait_orientationless": "Prokreationistisch",
+  "culture_trait_orientationless_info": "Die Idee von Orientierungen existiert nicht. Sie finden nur Liebhaber, mit denen sie sich fortpflanzen können und das war's dann auch schön wieder.",
+  "culture_trait_orientationless_info_2": "Was ist eine Orientierung? Das ist Ketzterei!",
+
+  "culture_trait_committed": "Verpflichtet",
+  "culture_trait_committed_info": "Sie sind ihren Beziehungen verpflichtet und werden niemals betrügen oder sich trennen, egal wie schlimm es wird.",
+  "culture_trait_committed_info_2": "Loyalität ist, was zählt!",
+
+  "culture_trait_mature_dating": "Reifes Dating",
+  "culture_trait_mature_dating_info": "Sie werden nur diejenigen daten, die sich in derselben Altersstufe befinden.",
+  "culture_trait_mature_dating_info_2": "Keine 18-Jährigen mehr, die 90-Jährige daten!",
+
+  "culture_trait_sexual_expectations": "Sexuelle Erwartungen",
+  "culture_trait_sexual_expectations_info": "Liebhaber können ihre sexuellen Erwartungen mit jemand anderem erfüllen, ohne Konsequenzen, selbst wenn es nicht ihr Partner ist.",
+  "culture_trait_sexual_expectations_info_2": "Sie können ihre Sexualität ausleben!",
+
+  "culture_trait_sex_for_reproduction": "Erhaltung",
+  "culture_trait_sex_for_reproduction_info": "Sexuelle Fortpflanzung wird nie als Betrug angesehen!",
+  "culture_trait_sex_for_reproduction_info_2": "Mit jedem reproduzieren ist in Ordnung",
+
+  "culture_trait_sex_for_reproduction_only": "Heiliges Kopulieren",
+  "culture_trait_sex_for_reproduction_only_info": "Die Menschen kopulieren nur zu Fortpflanzungszwecken.",
+  "culture_trait_sex_for_reproduction_only_info_2": "Kopulieren ist eine heilige Sache! Wie kannst du nur!",
+
+  "culture_trait_scar_of_incest": "Narbe des Inzests",
+  "culture_trait_scar_of_incest_info": "Zivilisationen empfinden Inzest als entscheidenden Teil ihrer Kultur und werden ihn niemals abschaffen.",
+  "culture_trait_scar_of_incest_info_2": "Es ist wichtig, die Bevölkerungszahl hochzuhalten!",
+
+  "subspecies_trait_preservation": "Erhaltung",
+  "subspecies_trait_preservation_info": "Wenn ihre relative Bevölkerungszahl niedrig ist, werden sie versuchen, Partner zur Fortpflanzung zu finden, egal was ihre Kultur oder Orientierung vorschreibt.",
+  "subspecies_trait_preservation_info_2": "Wenn es hart auf hart kommt, tut man, was man muss, um sein Erbe zu sichern.",
+
+  "subspecies_trait_reproduction_same_sex": "Gleichgeschlechtliche Fortpflanzung",
+  "subspecies_trait_reproduction_same_sex_info": "Zwei desselben Geschlechts sind zur Fortpflanzung erforderlich",
+  "subspecies_trait_reproduction_same_sex_info_2": "Zwei Positive werden tatsächlich zu drei",
+  
+  "world_law_fluid_sexuality_title": "Fließende Vorlieben",
+  "world_law_fluid_sexuality_description": "Vorlieben von Einheiten können sich mit der Zeit ändern, selbst wenn sie bereits festgelegt wurden",
+  "world_law_fluid_sexuality_description_2": "Sexualität kann auch fließend sein!",
+  
+  "orientations_lesbian": "Lesbisch",
+  "orientations_gay": "Schwul",
+  "orientations_straight": "Hetero",
+  "orientations_bisexual": "Bisexuell",
+  "orientations_pansexual": "Pansexuell",
+  "orientations_heterosexual": "Heterosexuell",
+  "orientations_homosexual": "Homosexuell",
+  "orientations_asexual": "Asexuell",
+  "orientations_lesbian_romantic": "Lesbisch romantisch",
+  "orientations_gay_romantic": "Schwul romantisch",
+  "orientations_straight_romantic": "Hetero romantisch",
+  "orientations_bisexual_romantic": "Bisexuell romantisch",
+  "orientations_pansexual_romantic": "Pansexuell romantisch",
+  "orientations_heterosexual_romantic": "Heterosexuell romantisch",
+  "orientations_homosexual_romantic": "Homosexuell romantisch",
+  "orientations_asexual_romantic": "Asexuell romantisch",
+  
+  "statistics_lesbian_description": "Sie ziehen statistisch mehr Frauen an als heterosexuelle Männer jemals könnten. Experten sind sich darüber noch nicht ganz einig.",
+  "statistics_gay_description": "Sie ziehen statistisch mehr Männer an als heterosexuelle Frauen jemals könnten. Experten sind sich darüber noch nicht ganz einig.",
+  "statistics_straight_description": "Sie sind einfach stinklangweilig",
+  "statistics_bisexual_description": "Sie schwingen gerne mal hin und her",
+  "statistics_pansexual_description": "Nein, sie stehen tatsächlich nicht auf Pfannen, Dummkopf",
+  "statistics_heterosexual_description": "Sie mögen ein anderes Geschlecht als ihr eigenes",
+  "statistics_homosexual_description": "Sie mögen Menschen ihres Geschlechts",
+  "statistics_asexual_description": "Sexuelle Intimität ist ihnen sowas von egal",
+
+  "statistics_lesbian_romantic_description": "Sie ziehen statistisch mehr Frauen an als heterosexuelle Männer jemals könnten. Experten sind sich darüber noch nicht ganz einig.",
+  "statistics_gay_romantic_description": "Sie ziehen statistisch mehr Männer an als heterosexuelle Frauen jemals könnten. Experten sind sich darüber noch nicht ganz einig.",
+  "statistics_straight_romantic_description": "Sie sind einfach stinklangweilig",
+  "statistics_bisexual_romantic_description": "Sie schwingen gerne mal hin und her",
+  "statistics_pansexual_romantic_description": "Nein, sie stehen tatsächlich nicht auf Pfannen, Dummkopf",
+  "statistics_heterosexual_romantic_description": "Sie mögen ein anderes Geschlecht als ihr eigenes",
+  "statistics_homosexual_romantic_description": "Sie mögen Menschen ihres Geschlechts",
+  "statistics_asexual_romantic_description": "Romantische Intimität ist ihnen sowas von egal",
+
+  "lonely_units": "Einsame Einheiten",
+  "statistics_lonely": "Einsame Einheiten",
+  "statistics_lonely_description": "Sie wollen einfach, dass sich jemand um sie kümmert :(",
+
+  "statistics_broke_up": "Getrennte Paare",
+  "statistics_broke_up_description": "So viele Versprechen, die mit der Zeit verloren gingen",
+
+  "statistics_cheated_on": "Betrogen",
+  "statistics_cheated_on_description": "Geliebte Erinnerungen, jetzt am Boden zerstört",
+
+  "statistics_adopted_baby": "Adoptierte Babys",
+  "statistics_adopted_baby_description": "So viele kleine Kinder!",
+  
+  "main_orientation": "Hauptorientierung",
+  "founder_orientation": "Gründerorientierung",
+  
+  "opinion_homosexual": "Meinungen über Homosexualität",
+  "opinion_heterosexual": "Meinungen über Heterosexualität",
+  "opinion_king_lovers": "Könige sind auch Liebhaber",
+  
+  "intimacy_happiness": "Intimität",
+  "stats_icon_intimacy_happiness": "Intimität",
+  "romantic_orientation": "Romantische Orientierung",
+  "sexual_orientation": "Sexuelle Orientierung",
+
+  "intimacy": "Intimität",
+  
+  "sexual": "Sexuell",
+  "romantic": "Romantisch",
+  "like_group": "Gruppe",
+  "intimate": "Intimitätstyp",
+  "like_group_identity": "Identitäten",
+  "like_group_expression": "Ausdrücke",
+  "like_group_genital": "Genitalien",
+  
+  "tab_title_tol": "Topic of Love - Thema Liebe",
+  "tab_desc_tol": "Für all deine romantischen und sexuellen Bedürfnisse!",
+  "tab_mind_likes": "Orientierung",
+  "tab_mind_likes_description": "Schau dir ihre romantischen und sexuellen Wünsche an... wen würden sie gerne vögeln?",
+  
+"mind_likes_regenerate_orientation": "Orientierung neu generieren",
+  "mind_likes_regenerate_orientation_description": "Würfelt die Orientierungen der Einheit neu basierend auf ihren aktuellen Vorlieben",
+  "mind_likes_regenerate_orientation_description_2": "Ist eine Frau lesbisch oder hetero, wenn sie auf 0en und 1en steht? Oder wir lassen sie wählen!",
+
+
+  "Graphs": "Mod-Grafiken",
+  "ModGraphs": "Statistiken",
+  "ModGraphs Description": "Fügt dem Spiel benutzerdefinierte Statistik-Grafiken hinzu. Deaktiviere dies und starte das Spiel neu, wenn du beim Benutzen der Grafiken viele Ruckler oder anderes bemerkst.",
+  
+  "Misc": "Entwickler-Einstellungen",
+  "SlowOnLog": "Verlangsamung bei Debug",
+  "SlowOnLog Description": "Verlangsamt das Spiel automatisch, wenn ein bestimmter Teil einer Debug-Nachricht ausgegeben wird. Leerlassen, um zu deaktivieren.",
+
+  "StackTrace": "Stack Trace",
+  "StackTrace Description": "Gibt einen Stack Trace aus, wenn ein bestimmter Teil einer Debug-Nachricht ausgegeben wird. Leerlassen, um zu deaktivieren.",
+
+  "Debug": "Debug",
+  "Debug Description": "Aktiviert Debug-Logs. Nur einschalten, wenn jemand dich dazu auffordert oder du ein Nerd bist.",
+  
+  "Ignore": "Ignorieren",
+  "Ignore Description": "Ignoriert Logs mit diesen bestimmten Schlüsselwörtern"
+}

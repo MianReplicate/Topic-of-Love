@@ -99,6 +99,8 @@ More over.. not all units will enjoy every copulating. The enjoyment of a unit's
   - First of, I just wanted to say thank you for taking the time to help out the mod. That means a lot to me as a developer! [You can find the link here](https://github.com/MianReplicate/Topic-of-Love/issues)
 - When two different species are involved in a pregnancy, will the baby's species be a mix of both?
   - At the moment, a baby will inherit one random species from their parents. This may change in the future.
+- Won't this make my societies more likely to die out?
+  - Nope! This mod makes reproduction completely independent of the lover system. This means that lesbians will still reproduce with gay men if a society is dying out. No, this does not mean they are bisexual or poly, you can be not sexually attracted to something while still being sexually involved with it. Population growth may still slow down as units with preferences that don't match with one another typically avoid copulating together.
 - Why did you make this mod?
   - As someone who was eager to play the new WorldBox update, I was excited to find that a new lover system was implemented! I.. however.. was not excited to find out that two different species could not fall in love, and that two people could not fall in love if they could not make babies together! My love for the Lumity ship from The Owl House is so strong that I made this mod <3. Oh, and queer representation is always nice.
 - How was the process of making this mod?
